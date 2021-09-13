@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script>
+        document.write("<h1>Numeros pares entre 1 y 100</h1>");
+        var cadena="";
+        var cont=2;
+        while(cont<=100){
+            cadena+= cont+",";
+            if(cont%10==0){
+                document.write("<p>"+cadena+"</p>")
+                cadena="";
+            }
+            cont+=2;
+        }
+
+    </script>
+    
+</body>
+</html>
