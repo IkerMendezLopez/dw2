@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Ejemplo de HTML5" />
+	<meta name="keywords" content="HTML5, CSS3" />
+	<meta name="author" content="">
+	<title>Ejercicio4</title>
+	<link rel="stylesheet" href="./Recursos/Ejercicios 1/css/ejercicio4.css" />
+</head>
+
+<body lang="es">
+	<header>
+		<!-- Encabezado-->
+		<h1>FICHA DE INSCRIPCION</h1>
+	</header>
+	<main>
+		<!-- Unico en el documento. Contenido principal-->
+		<form>
+		<fieldset>
+			<legend>Datos Identificativos</legend>
+			<label for="suscripcion">Codigo de suscripción:</label>
+			<input type="text" id="suscripcion" name="suscripcion" size="10" readonly value="INS-00123">
+			<label for="socio">NºSocio:</label>
+			<input type="text" id="socio" name="socio" size="10" disabled value="123">
+			<label for="usuario">Usuario:</label>
+			<input type="text" id="usuario" name="usuario" maxlength="10" size="15" required>
+			<label for="contraseña">Contraseña:</label>
+			<input type="password" id="contraseña" name="contraseña" maxlength="10" size="15" required>
+			<label for="contraseña2">Repite Contraseña:</label>
+			<input type="password" id="contraseña2" name="contraseña2" maxlength="10" size="15" required>
+			<label for="nombreCom">Nombre Completo:</label>
+			<input type="text" id="nombreCom" name="nombreCom" maxlength="30" size="30" autofocus>
+			<label for="dni">DNI:</label>
+			<input type="text" id="dni" name="dni" maxlength="8" size="10" pattern="[0-9]{8}">
+			<label for="letra">Letra:</label>
+			<input type="text" id="letra" name="letra" maxlength="1" size="2" pattern="[A-Z]">
+			<label for="direccion">Direccion:</label>
+			<input type="text" id="direccion" name="direccion" maxlength="30" size="30">
+			<label for="ciudad">Ciudad:</label>
+			<input type="text" id="ciudad" name="ciudad" maxlength="15" size="15">
+			<label for="codPostal">Codigo Postal:</label>
+			<input type="text" id="codPostal" name="codPostal" maxlength="5" size="5" pattern="[0-9]{5}">
+			<label for="pais">Pais:</label>
+			<input type="text" id="pais" name="pais" size="7" disabled value="Francia">
+		</fieldset>
+		<fieldset>
+			<legend>Datos Bancarios</legend>
+			<input type="radio" name="datos" id="visa">
+			<label>Visa</label>
+			<input type="radio" name="datos" id="master">
+			<label>MasterCard</label>
+			<input type="radio" name="datos" id="america" checked>
+			<label>American Express</label>
+		</fieldset>
+		<fieldset>
+			<legend>Aficiones</legend>
+			<input type="checkbox" name="leer" id="leer" checked>
+			<label>Leer</label>
+			<input type="checkbox" name="viajar" id="viajar" checked>
+			<label>Viajar</label>
+			<input type="checkbox" name="musica" id="musica" checked>
+			<label>Escuchar musica</label>
+			<input type="checkbox" name="deportes" id="deportes">
+			<label>Deportes</label>
+			<input type="checkbox" name="montana" id="montana">
+			<label>Montaña</label>
+			<input type="checkbox" name="estrategia" id="estrategia" checked>
+			<label>Juegos de Estrategia</label>
+			<details>
+				<summary>Mas Opciones</summary>
+				<input type="checkbox" name="informatica" id="informatica">
+				<label>Informatica</label>
+				<input type="checkbox" name="jogging" id="jogging">
+				<label>Jogging</label>
+				<input type="checkbox" name="cine" id="cine">
+				<label>Cine</label>
+			</details>
+		</fieldset>
+		<fieldset>
+			<legend>Enviar Informacion</legend>
+			<details>
+				<summary>Mas Opciones</summary>
+					Adjuntar resguardo de pago(PDF) 
+					<input type="file" name="archivo" id="archivo" accept="application/pdf">
+			</details>
+			<input type="submit" value="Enviar">
+			<input type="reset" value="Vaciar">
+		</fieldset>
+		</form>
+	</main>
+
+	<footer>
+		<!--Pie de pagina-->
+		Derechos Reservados &copy; 2010-2011
+	</footer>
+</body></html>
