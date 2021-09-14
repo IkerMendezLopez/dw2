@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio7</title>
 </head>
+
 <body>
     <script>
-        function sumatorio(n){
-            return n*(n+1)/2;
+        function sumatorio(n) {
+            return n * (n + 1) / 2;
         }
-        var cadena ="";
-        var diGreff=1;
-        for (let i = 1; i < 100; i+=2) {
-            if(sumatorio(i)>1000){
+        var cadena = "";
+        var diGreff = 1;
+        document.write("<p>");
+        for (let i = 1; i < 100; i += 1) {
+            if (sumatorio(i) >= 1000) {
+                document.write("</p>");
                 break;
             }
-            cadena+=sumatorio(i)+",";
-
-            if(diGreff==4){
-                document.write("<p>"+cadena+"</p>");
-                cadena="";
-                diGreff=0;
+            if (sumatorio(i) % 2 != 0) {
+                document.write(sumatorio(i)+",");
+                if (diGreff == 4) {
+                    document.write("</p>");
+                    diGreff = 0;
+                }
+                diGreff++;
             }
-            diGreff++;
         }
-
     </script>
-    
+
 </body>
+
 </html>
