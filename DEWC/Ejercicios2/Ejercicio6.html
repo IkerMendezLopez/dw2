@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+
+<body>
+    <script>
+        let fechaNac = prompt('Introduce tu fecha de nacimiento: ');
+        let fecha = new Date(fechaNac);
+        let fechaHoy = new Date();
+        let anios = fechaHoy.getFullYear()-fecha.getFullYear();
+        if(fechaHoy.getMonth()<fecha.getMonth()){
+            anios--;
+
+        }else if(fechaHoy.getMonth()==fecha.getMonth() && fechaHoy.getDay()>fecha.getDay()){
+            anios--;
+        }
+        document.write(`Tienes ${anios} años`);
+    </script>
+</body>
+
+</html>

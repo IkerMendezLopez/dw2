@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a JavaScript</title>
+</head>
+
+<body>
+    <script>
+        document.write(`<h3>Objeto Screen</h3>La resolución de la pantalla: ${screen.width}x${screen.height}`);
+        document.write(
+            `<h3>Objeto Navigator</h3>El nombre del navegador que usas es: ${navigator.appName} 
+            <br>Usas el sistema operativo: ${navigator.platform} 
+            <br>La version del navegadore que usas: ${navigator.appVersion}`
+        );
+        document.write(`<h3>Objeto Document</h3>LA URL del documento es: ${document.URL}`);
+        document.write(`<h3>Objeto Location</h3>El protocolo usado para acceder a esta pagina ha sido: ${location.protocol}`);
+        window.open("https://www.google.es/", "GOOGLE",
+            "menubar=no, location=no,resizable=no, scrollbars=no, toolbar=no, status=no,menubar=yes,width=600,height=400,top=50,left=150"
+            );
+    </script>
+</body>
+
+</html>
