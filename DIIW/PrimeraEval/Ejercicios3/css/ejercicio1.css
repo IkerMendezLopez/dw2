@@ -1,0 +1,13 @@
+*{
+	color:red;
+	font-size: 130%;
+}
+strong{
+	color:blue;
+}
+span{
+	color:green;
+}
+del{
+	color: yellow;
+}
