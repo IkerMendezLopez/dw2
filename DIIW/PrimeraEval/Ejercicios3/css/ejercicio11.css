@@ -1,0 +1,30 @@
+* {
+    line-height: 2em;
+}
+
+p.especial {
+    background-color: gainsboro;
+    font-size: 1.2em;
+}
+
+p.especial::first-line {
+    color: blue;
+    background-color: steelblue;
+    text-transform: uppercase;
+}
+
+p.especial::first-letter {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+p.especial em {
+    font-weight: 700;
+}
+
+p.especial strong {
+    background-color: yellow;
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+    font-style: italic;
+}

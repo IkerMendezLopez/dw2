@@ -1,0 +1,19 @@
+.primero{
+	font-size:1em;
+}
+.primero span{
+	color: red;
+}
+.segundo{
+	font-size:1.2em;
+}
+.segundo span{
+	color: blue;
+}
+.tercero{
+	font-size:.8em;
+}
+	
+.tercero span{
+	color: green;
+}

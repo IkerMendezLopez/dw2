@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+
+@font-face{
+	font-family: "Niconne";
+	src: url('./Fonts/Niconne-Regular.ttf');
+}
+*{
+	color:red;
+}
+.recuadro1{
+	
+	font-family: "Niconne";
+	background-color:rgba(191, 191, 191, 0.5);
+
+	padding: 1em;
+}
+.recuadro2{
+	font-family: "Barrio";
+	background-color:rgba(191, 191, 191, 0.5);
+	
+	padding: 1em;
+}
+body{
+	column-count: 2;
+}
+
