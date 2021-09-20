@@ -10,14 +10,14 @@
 
 <body>
     <script>
-        let fechaNac = prompt('Introduce tu fecha de nacimiento: ');
+        let fechaNac = prompt('Introduce tu fecha de nacimiento: (aaaa/mm/dd)');
         let fecha = new Date(fechaNac);
         let fechaHoy = new Date();
         let anios = fechaHoy.getFullYear()-fecha.getFullYear();
         if(fechaHoy.getMonth()<fecha.getMonth()){
             anios--;
 
-        }else if(fechaHoy.getMonth()==fecha.getMonth() && fechaHoy.getDay()>fecha.getDay()){
+        }else if(fechaHoy.getMonth()==fecha.getMonth() && fechaHoy.getDate()<fecha.getDate()){
             anios--;
         }
         document.write(`Tienes ${anios} años`);

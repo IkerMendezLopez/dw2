@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+
+<body>
+    <script>
+        let fechaAntes = prompt('Introduce un año: ') + "/01" + "/01";
+        let fecha = new Date(fechaAntes);
+        let fechaHoy = new Date();
+        let segundos= Math.floor((fechaHoy-fecha)/1000);
+        if(fechaHoy.getFullYear()!=fecha.getFullYear()){
+            let dias = (fechaHoy.getFullYear() - fecha.getFullYear()-1)*365;
+            let diasMes=(fechaHoy.getMonth)
+        }else{
+           
+        }
+        
+        document.write(`Han pasado ${dias}`);
+    </script>
+</body>
+
+</html>
