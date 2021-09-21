@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+
+<body>
+    <h1>Manejando Ventanas</h1>
+    <form>
+        <label for="nomApe">Nombre y Apellidos: </label>
+        <input type="text" id="resultado" name="nom"/>
+        <input type="submit" value="Entrar" onclick="comprobar();return false;">
+    </form> 
+        <script>
+            function comprobar() {
+
+                if(document.getElementById("resultado").value == ""){
+                   alert("Campo vacio");
+                }else{
+                    let ventana = window.open("Ejercicio9_Ventana.html", "Emergente", "width=300, height=300");
+                    ventana.nombre = document.getElementById("resultado").value;
+                    ventana.onbeforeunload = () => window.location.replace("https://www.google.es/");
+                }
+            }
+        </script>
+    
+</body>
+
+</html>

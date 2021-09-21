@@ -13,15 +13,14 @@
         let fechaAntes = prompt('Introduce un año: ') + "/01" + "/01";
         let fecha = new Date(fechaAntes);
         let fechaHoy = new Date();
-        let segundos= Math.floor((fechaHoy-fecha)/1000);
-        if(fechaHoy.getFullYear()!=fecha.getFullYear()){
-            let dias = (fechaHoy.getFullYear() - fecha.getFullYear()-1)*365;
-            let diasMes=(fechaHoy.getMonth)
-        }else{
-           
-        }
-        
-        document.write(`Han pasado ${dias}`);
+        let segundos = Math.floor((fechaHoy - fecha) / 1000);
+        let minutos = Math.floor(segundos / 60);
+        let horas = Math.floor(minutos / 60);
+        let dias = Math.floor(horas / 24);
+        horas = Math.floor(horas - (dias * 24));
+        minutos = Math.floor(minutos - (dias * 24 * 60) - horas * 60);
+        segundos = Math.floor(segundos - (dias * 24 * 60 * 60) - horas * 60 * 60 - minutos * 60);
+        document.write(`Han pasado ${dias} , ${horas+1} , ${minutos} y ${segundos} desde ${fecha}`);
     </script>
 </body>
 

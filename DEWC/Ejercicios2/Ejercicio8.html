@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio8</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Manejando Cadenas</h1>
+	<script>
+		let cadena = "¡Hola!";
+		document.write(`La variable cadena contiene el siguiente texto: ${cadena}`);
+		document.write(`<br>Su longitud es de ${cadena.length} caracteres distribuidos segun se indica en la tabla:`);
+		document.write(`<table>
+							<tr>
+								<th>Posición</th>`);
+		for (let index = 0; index < cadena.length; index++) {
+			document.write(`    <td>${index}</td>`);
+		}
+		document.write(`    </tr>
+							<tr>
+								<th>Contenido</td>`);
+		for (let index = 0; index < cadena.length; index++) {
+			document.write(`    <td>${cadena.charAt(index)}</td>`);
+		}
+		document.write(`    </tr>
+						</table>`);
+	</script>
+</body>
+
+</html>
