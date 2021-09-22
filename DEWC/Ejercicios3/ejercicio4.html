@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <h1>COPIAR TEXTO</h1>
+    <input type="text" name="caja1" id="caja1">
+    <input type="text" name="caja2" id="caja2" disabled>
+    <input type="button" value="Pasar texto a la derecha" onclick="pasarTexto()">
+    <script>
+        function pasarTexto(){
+            let caja1 = document.getElementById("caja1");
+            document.getElementById("caja2").value = caja1.value;
+            caja1.value="";
+
+        }
+    </script>
+</body>
+</html>
