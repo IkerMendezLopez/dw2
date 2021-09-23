@@ -1,5 +1,5 @@
 * {
-    line-height: 2em;
+	font: 1.5m Verdana, Arial, sans-serif; 
 }
 
 p.especial {
@@ -9,7 +9,7 @@ p.especial {
 
 p.especial::first-line {
     color: blue;
-    background-color: steelblue;
+    background-color: lightblue;
     text-transform: uppercase;
 }
 
@@ -23,7 +23,7 @@ p.especial em {
 }
 
 p.especial strong {
-    background-color: yellow;
+    background-color: #FF6;
     border-top: 2px solid black;
     border-bottom: 1px solid black;
     font-style: italic;

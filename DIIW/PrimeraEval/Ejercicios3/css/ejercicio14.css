@@ -1,0 +1,25 @@
+div{
+	background-color: lightblue;
+}
+.margenes{
+	margin-bottom: 30px;
+	margin-left: 10px;
+	margin-top: 12px;
+	margin-right: 60px;
+}
+.margin1{
+	margin: 50px;
+	background-color: pink;
+}
+.margin2{
+	margin: 25px 30px;
+	background-color: lightgreen;
+}
+.margin3{
+	margin: 40px 10px 15px;
+	background-color: lightcyan;
+}
+.margin4{
+	margin: 20px 55px 5px 60px;
+	background-color: lightgray;
+}

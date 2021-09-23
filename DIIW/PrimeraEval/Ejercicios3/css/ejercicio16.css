@@ -1,0 +1,33 @@
+.bordes{
+    background-color: lightcyan;
+    border-top:15px solid blue;
+    border-left: 10px double lime;
+    border-bottom: 2px dashed red;
+    border-right: 10px solid magenta;
+}
+.bordes2{
+    border-top-width: 15px;
+    border-top-style: solid;
+    border-top-color:blue;
+    border-left-width:10px;
+    border-left-style: double;
+    border-left-color: lime;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+    border-bottom-color: red;
+    border-right-width: 10px;
+    border-right-style: solid;
+    border-right-color: magenta;
+    background-color: sandybrown;
+}
+.bordes3{
+    background-color:pink;
+    border-top:15px solid blue;
+    border-left: 10px double lime;
+    border-bottom: 2px dashed red;
+    border-right: 10px solid magenta;
+}
+.bordes4{
+    background-color:yellow;
+    border: 6px dotted blue;
+}

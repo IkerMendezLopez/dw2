@@ -1,0 +1,52 @@
+div{
+	width: 170px;
+	height: 60px;
+	margin: 10px;
+	padding: 30px;
+	background-color: blue;
+}
+body{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+span{
+	background-color: aqua;
+}
+.baseline{
+	vertical-align: baseline;
+}
+.subindice{
+	vertical-align: sub;
+}
+.superindice{
+	vertical-align: super;
+}
+.top{
+	vertical-align: top;
+}
+.text-top{
+	vertical-align: text-top;
+}
+.botton{
+	vertical-align: bottom;
+}
+.text-bottom{
+	vertical-align: text-bottom;
+}
+.medida2em{
+	vertical-align: 2em;
+}
+.medida-2em{
+	vertical-align: -2em;
+}
+.porcentaje10{
+	vertical-align: 10%;
+}
+.porcentaje80{
+	vertical-align: 80%;
+}
+img{
+	border: thick dashed white;
+}
