@@ -4,17 +4,18 @@
 <head>
     <title>Seleccionar Cantidad IMG</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <?php
-
+    define("DIRIMG", "../imagenes");
     function cuantasImg()
     {
         $cont = 0;
-        $arrext = array("jpg", "png", "JPG", "PNG");
-        $dir = opendir("../imagenes");
+        $arrext = array("jpg", "png", "tiff");
+        $dir = opendir(DIRIMG);
         while ($elemento = readdir($dir)) {
             if (!is_dir("../imagenes/". $elemento)) {
                 $ext = explode(".",$elemento);
@@ -26,17 +27,21 @@
         return $cont;
     }
     ?>
-    <form action="eval_imag.php" method="post">
+    <form action="eval_imag.php"
+        method="post">
         <label for="cantImg">¿Cuantas imágenes deseas ver?</label>
-        <select id="cantImg" name="cantImg">
+        <select id="cantImg"
+            name="cantImg">
             <?php
             cuantasImg();
-            for ($i = 2; $i < cuantasImg(); $i++) {
+            for ($i = 2; $i <= cuantasImg(); $i++) {
                 echo "<option> $i </option>";
             }
             ?>
         </select><br>
-        <input type="submit" name="ver" value="VER IMAGENES">
+        <input type="submit"
+            name="ver"
+            value="VER IMAGENES">
     </form>
 </body>
 
