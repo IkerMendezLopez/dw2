@@ -1,0 +1,10 @@
+div{
+    margin: 0 auto;
+    height:500px;
+    width: 600px;
+    background: url("../imagenes/logo1.png") no-repeat top right,
+                url("../imagenes/logo1.png") no-repeat top left,
+                url("../imagenes/logo1.png") no-repeat bottom left,
+                url("../imagenes/madera1.png") no-repeat bottom right;
+    background-color: salmon;
+}

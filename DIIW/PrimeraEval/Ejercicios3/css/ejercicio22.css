@@ -1,0 +1,14 @@
+*  {
+	box-sizing: border-box;
+}
+div{
+    width: 15%;
+	margin: 0 auto;
+}
+
+.recuadro1 {
+	background-color: gainsboro;
+	padding: .5rem;
+    border-radius: 1.5rem;
+    box-shadow: 25px 25px 10px lime, -25px -25px 10px red;
+}

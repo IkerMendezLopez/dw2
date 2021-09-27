@@ -1,0 +1,32 @@
+*  {
+	box-sizing: border-box;
+}
+
+.contenedor {
+	width: 35%;
+	margin: 0 auto;
+	padding: 0;
+    display: flex;
+    gap:5rem;
+}
+
+.contenedor > * {
+	display: inline-block;
+	width: 47%;
+}
+
+
+.recuadro1 {
+	background-color: gainsboro;
+	padding: .5rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+}
+
+.recuadro2 {
+
+	background-color: #c6ce00;
+	padding: .5rem;
+	border-top-right-radius: 2rem;
+}

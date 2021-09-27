@@ -1,0 +1,20 @@
+div{
+    padding:25px;
+    background-color:lightgray;
+    margin: 20px;
+}
+div::first-letter {
+    font-size: 3rem;
+}
+.caja1{
+    border: 20px solid transparent;
+    border-image: url(../imagenes/bordes.png) 34% stretch;
+}
+.caja2{
+    border: 20px solid transparent;
+    border-image: url(../imagenes/bordes.png) 35% round;
+}
+.caja3{
+    border: 20px solid transparent;
+    border-image: url(../imagenes/bordes.png) 34% space;
+}
