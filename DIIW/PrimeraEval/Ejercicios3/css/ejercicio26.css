@@ -1,9 +1,9 @@
-div{
+div {
     margin: 0 auto;
-    height:500px;
+    height: 500px;
     width: 600px;
     background: url("../imagenes/logo1.png") no-repeat center,
-                 url("../imagenes/logo1.png") no-repeat top left,
-                url("../imagenes/madera1.png");
-    background-size: auto auto,100px 100px, auto auto;
+        url("../imagenes/logo1.png") no-repeat top left,
+        url("../imagenes/madera1.png");
+    background-size: auto auto, 100px 100px, auto auto;
 }
