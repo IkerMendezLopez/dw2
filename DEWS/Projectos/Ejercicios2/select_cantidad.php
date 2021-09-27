@@ -12,16 +12,13 @@
 
     function cuantasImg()
     {
-        echo "hola";
         $cont = 0;
         $arrext = array("jpg", "png", "JPG", "PNG");
         $dir = opendir("../imagenes");
-        echo "hola";
         while ($elemento = readdir($dir)) {
-            echo "entra";
-            if (!is_dir($dir . $elemento)) {
-                $ext = str_split($elemento, ".");
-                if (in_array($ext, $arrext)) {
+            if (!is_dir("../imagenes/". $elemento)) {
+                $ext = explode(".",$elemento);
+                if (in_array($ext[1], $arrext)) {
                     $cont++;
                 }
             }
@@ -35,7 +32,7 @@
             <?php
             cuantasImg();
             for ($i = 2; $i < cuantasImg(); $i++) {
-                echo "<option> . $i . </option>";
+                echo "<option> $i </option>";
             }
             ?>
         </select><br>
