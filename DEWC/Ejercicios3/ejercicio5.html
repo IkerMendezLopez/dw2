@@ -1,48 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
     <title>Ejercicio5</title>
     <style type="text/css">
-    input[type=button]{
-        width:2rem;
-        height:2rem;
-    }
-    input[type=text]{
-        width:135px;
-    }
-    
+        input[type=button] {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        input[type=text] {
+            width: 135px;
+        }
     </style>
 </head>
+
 <body>
     <h1>Calculadora</h1>
     <table>
-        <input type="text" id="caja1" disabled>
+        <input type="text"
+            id="caja1"
+            disabled>
         <tr>
-            <td><input type=button value="1" id="1"></td>
-            <td><input type=button value="2" id="2"></td>
-            <td><input type=button value="3" id="3"></td>
-            <td><input type=button value="C" id="c"></td>
+            <td><input type=button
+                    value="1"
+                    id="1"></td>
+            <td><input type=button
+                    value="2"
+                    id="2"></td>
+            <td><input type=button
+                    value="3"
+                    id="3"></td>
+            <td><input type=button
+                    value="C"
+                    id="c"></td>
         </tr>
         <tr>
-            <td><input type=button value="4" id="4"></td>
-            <td><input type=button value="5" id="5"></td>
-            <td><input type=button value="6" id="6"></td>
-            <td><input type=button value="+" id="sum"></td>
+            <td><input type=button
+                    value="4"
+                    id="4"></td>
+            <td><input type=button
+                    value="5"
+                    id="5"></td>
+            <td><input type=button
+                    value="6"
+                    id="6"></td>
+            <td><input type=button
+                    value="+"
+                    id="sum"></td>
         </tr>
         <tr>
-            <td><input type=button value="7" id="7"></td>
-            <td><input type=button value="8" id="8"></td>
-            <td><input type=button value="9" id="9"></td>
-            <td><input type=button value="-" id="res"></td>
+            <td><input type=button
+                    value="7"
+                    id="7"></td>
+            <td><input type=button
+                    value="8"
+                    id="8"></td>
+            <td><input type=button
+                    value="9"
+                    id="9"></td>
+            <td><input type=button
+                    value="-"
+                    id="res"></td>
         </tr>
         <tr>
-            <td><input type=button value="0" id="0"></td>
-            <td><input type=button value="/" id="div"></td>
-            <td><input type=button value="=" id="equ"></td>
-            <td><input type=button value="*" id="mul"></td>
+            <td><input type=button
+                    value="0"
+                    id="0"></td>
+            <td><input type=button
+                    value="/"
+                    id="div"></td>
+            <td><input type=button
+                    value="="
+                    id="equ"></td>
+            <td><input type=button
+                    value="*"
+                    id="mul"></td>
         </tr>
     </table>
     <script>
@@ -50,9 +88,32 @@
         for (let index = 0; index < botones.length; index++) {
             botones[index].addEventListener("click", e => calcular(botones[index].value));
         }
+
         function calcular(v) {
-            console.log(v);
+            let res = document.getElementById("caja1").value;
+            if (res == "SyntaxError" || res == "0") {
+                document.getElementById("caja1").value = v;
+            } else if (v == "C") {
+                document.getElementById("caja1").value = "";
+            } else {
+                if (v == "=") {
+                    try {
+                        console.log(res);
+                        console.log(eval(res));
+                        if (eval(res) == Infinity) {
+                            document.getElementById("caja1").value = "SyntaxError";
+                        } else {
+                            document.getElementById("caja1").value = eval(res);
+                        }
+                    } catch (Error) {
+                        document.getElementById("caja1").value = "SyntaxError";
+                    }
+                } else {
+                    document.getElementById("caja1").value += v;
+                }
+            }
         }
     </script>
 </body>
+
 </html>

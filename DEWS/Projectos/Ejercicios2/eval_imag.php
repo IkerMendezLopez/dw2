@@ -16,6 +16,7 @@
             $dir = opendir($carpeta);
             while ($elemento = readdir($dir)) {
                 if (!is_dir("../imagenes/" . $elemento)) {
+                    
                 }
             }
         }
