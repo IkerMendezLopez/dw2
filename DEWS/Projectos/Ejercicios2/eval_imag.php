@@ -59,7 +59,7 @@
     function aniadirLinea(){
         $linea = "";
         for ($i=0; $i < count($_POST['checkArr']) ; $i++) { 
-            $linea .= $_POST['checkArr'][$i] . "  ";
+            $linea .= $_POST['checkArr'][$i] . "    ";
         }
         $file = fopen("imagenes.txt", "a");
         fwrite($file, $_SERVER['REMOTE_ADDR'] .": ". $linea . PHP_EOL);
