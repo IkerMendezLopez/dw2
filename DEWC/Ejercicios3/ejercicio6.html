@@ -2,84 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-        content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio6</title>
-    <style>
-        *{
-            text-align: center;
-        }
-        table{
-            margin:0 auto;
-        }
-    </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+                content="IE=edge">
+        <meta name="viewport"
+                content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio6</title>
+        <style>
+                * {
+                        text-align: center;
+                }
+
+                table {
+                        margin: 0 auto;
+                }
+        </style>
 </head>
 
 <body>
-    <h1> FECHA Y HORA </h1>
-    <table>
-        <tr id="fecha">
-            <td><img src=""
-                    alt="d1"></td>
-            <td><img src=""
-                    alt="d2"></td>
-            <td><img src=""
-                    alt="/"></td>
-            <td><img src=""
-                    alt="m1"></td>
-            <td><img src=""
-                    alt="m2"></td>
-            <td><img src=""
-                    alt="/"></td>
-            <td><img src=""
-                    alt="a1"></td>
-            <td><img src=""
-                    alt="a2"></td>
-            <td><img src=""
-                    alt="a3"></td>
-            <td><img src=""
-                    alt="a4"></td>
-        </tr>
-        <tr id="hora">
-            <td></td>
-            <td><img src=""
-                    alt="h1"></td>
-            <td><img src=""
-                    alt="h2"></td>
-            <td><img src=""
-                    alt=":"></td>
-            <td><img src=""
-                    alt="min1"></td>
-            <td><img src=""
-                    alt="min2"></td>
-            <td><img src=""
-                    alt=":"></td>
-            <td><img src=""
-                    alt="s1"></td>
-            <td><img src=""
-                    alt="s2"></td>
-            <td></td>
-        </tr>
-    </table>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-    <script>
-        function actualizar(){
-            let fecha = moment().format('DD/MM/YYYYhh:mm:ss');
-            let trFecha = document.getElementById('fecha');
-            console.log(fecha);
-        }
-        let arr = [];
-        for (let index = 0; index < 10; index++) {
-            arr[index] = "./images/" + index + ".jpg";
-        }
-        setInterval(actualizar(), 1000);
-    </script>
+        <h1> FECHA Y HORA </h1>
+        <table>
+                <tr id="fecha">
+                        <td><img src=""
+                                        alt="d1"></td>
+                        <td><img src=""
+                                        alt="d2"></td>
+                        <td><img src="./images/barra.jpg"
+                                        alt="/"></td>
+                        <td><img src=""
+                                        alt="m1"></td>
+                        <td><img src=""
+                                        alt="m2"></td>
+                        <td><img src="./images/barra.jpg"
+                                        alt="/"></td>
+                        <td><img src=""
+                                        alt="a1"></td>
+                        <td><img src=""
+                                        alt="a2"></td>
+                        <td><img src=""
+                                        alt="a3"></td>
+                        <td><img src=""
+                                        alt="a4"></td>
+                </tr>
+                <tr id="hora">
+                        <td></td>
+                        <td><img src=""
+                                        alt="h1"></td>
+                        <td><img src=""
+                                        alt="h2"></td>
+                        <td><img src="./images/puntos.jpg"
+                                        alt=":"></td>
+                        <td><img src=""
+                                        alt="min1"></td>
+                        <td><img src=""
+                                        alt="min2"></td>
+                        <td><img src="./images/puntos.jpg"
+                                        alt=":"></td>
+                        <td><img src=""
+                                        alt="s1"></td>
+                        <td><img src=""
+                                        alt="s2"></td>
+                        <td></td>
+                </tr>
+        </table>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+                integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"></script>
+        <script>
+                function actualizar() {
+                        let fecha = moment().format('DD/MM/YYYYhh:mm:ss');
+                        let arrEle = document.getElementsByTagName('img');
+                        //console.log(fecha);
+                        for (let index = 0; index < arrEle.length; index++) {
+                                if (arrEle[index].alt != "/" && arrEle[index].alt != ":") {
+
+                                        arrEle[index].src = "./images/" + fecha.charAt(index) + ".jpg";
+                                }
+                        }
+                }
+                let arr = [];
+                for (let index = 0; index < 10; index++) {
+                        arr[index] = "./images/" + index + ".jpg";
+                }
+                setInterval(actualizar, 1000);
+        </script>
 </body>
 
 </html>
