@@ -1,3 +1,28 @@
+body{ 
+    text-align: center; 
+}
+.recuadro1,
+.recuadro2,
+.recuadro3 {
+    text-align: left; 
+	display: inline-block;
+	width: 20%;
+	background: url('../imagenes/casa.png') no-repeat yellow;
+	padding: 2rem;
+	border: 1rem lightgrey solid;
+    margin: .5rem;
+}
+
 .recuadro1 {
-    
+	background-origin: border-box;
+}
+
+
+.recuadro2 {
+	background-origin: padding-box;
+}
+
+
+.recuadro3 {
+	background-origin: content-box;
 }

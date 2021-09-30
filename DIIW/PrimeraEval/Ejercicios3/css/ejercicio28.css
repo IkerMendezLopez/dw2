@@ -1,53 +1,270 @@
 /* ===============================================================
 No modificar estos estilos
 ================================================================== */
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-li { 
-    list-style: none; 
+
+li {
+    list-style: none;
 }
+
 body {
     margin: 0 auto;
     max-width: 900px;
     width: 90%;
 }
-header, nav, aside, footer, section, .contenedor {
+
+header,
+nav,
+aside,
+footer,
+section,
+.contenedor {
     border: 2px solid #777;
 }
-header{
-    display:flex;
+
+header {
+    display: flex;
     justify-content: space-between;
 }
-main{
-    display:flex;
+
+main {
+    display: flex;
 }
-.lateral1 { 
-    width: 20%; 
+
+.lateral1 {
+    width: 20%;
 }
-.contenedor { 
-    display:flex;
-    width: 80%; 
+
+.contenedor {
+    display: flex;
+    width: 80%;
 }
-section { 
-    width: 80%; 
+
+section {
+    width: 80%;
 }
-.lateral2 { 
-    width: 20%; 
+
+.lateral2 {
+    width: 20%;
 }
-footer{
-    display:flex;
+
+footer {
+    display: flex;
     justify-content: space-between;
 }
-nav li { 
-    display: inline; 
+
+nav li {
+    display: inline;
 }
-section article img { 
-    float: left; 
+
+section article img {
+    float: left;
     width: 100px;
 }
+
 /* ================================================================
-Añade tus estilos aqui
+PARTE 1
 ================================================================== */
+header {
+    padding: 1em;
+}
+
+nav {
+    padding: .5em;
+    margin: .5em;
+}
+
+footer {
+    padding: .5em;
+}
+
+.noticias,
+.publicidad,
+article {
+    padding: .5em;
+}
+article, .noticias{
+    margin-bottom: 1em;
+}
+
+img {
+    margin: .5em;
+}
+footer{
+    margin-top: 1em;
+}
+.publicidad > p{
+    margin-top: 1em;
+}
+label[for=buscar] {
+    margin-right: 1em;
+}
+/* ================================================================
+PARTE 2
+================================================================== */
+header,
+nav,
+aside,
+footer,
+section,
+.contenedor {
+    border: none;
+}
+nav{
+    border-bottom: 1px solid gray;
+}
+.noticias{
+    border: 1px solid lightgray;
+}
+.publicidad{
+    border:1px dashed #CC6600;
+}
+footer{
+    border-top:1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+}
+/* ================================================================
+PARTE 3
+================================================================== */
+.noticias, footer{
+    background-color: gray;
+}
+.publicidad{
+    background-color: #FFFF33;
+}
+.lateral2 > h2{
+    background-color: #DB905C;
+    padding: .2em;
+}
+nav{
+    background-color: darkblue;
+}
+header h1{
+    background: url('../imagenes/logo1.png') no-repeat center;
+    color: transparent;
+}
+/* ================================================================
+PARTE 4
+================================================================== */
+section article h2 {
+    color: #CC6600;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    margin-bottom: .3em;
+
+}
+
+nav li {
+    margin-right: 1em;
+
+}
+
+nav li a {
+    color: white;
+    font-size: 1.3em;
+}
+
+.lateral1 > * {
+    font-size: .9em;
+}
+
+.noticias span.fecha {
+    display: block;
+    width: 100%;
+    color: #999;
+    text-align: right;
+}
+
+.noticias h2 {
+    color: #003366;
+}
+
+.publicidad p {
+    color: #555;
+}
+
+.publicidad a {
+    color: #CC6600;
+}
+
+section article a {
+    color: #CC6600;
+}
+
+section article p {
+    margin: .3em 0;
+}
+
+section article h2 {
+    color: #CC6600;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+.lateral1 p {
+    font-size: 0.9em;
+}
+
+.noticias .fecha {
+    width: 100%;
+    color: #999;
+}
+
+.noticias h2 {
+    color: #003366;
+}
+
+.publicidad p {
+    color: #555;
+}
+
+.publicidad a {
+    color: #CC6600;
+}
+
+section a {
+    color: CC6600;
+}
+
+section p {
+    margin-block: 0.3em;
+}
+
+.lateral2 h2 {
+    color: #FFF;
+    font-size: 1em;
+}
+
+footer p {
+    color: #555;
+    font-size: 0.75em;
+}
+
+section article p {
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 1.8em;
+}
+
+p::first-letter {
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+section article h2 {
+    word-spacing: .3em;
+}
+
+ul.menu_principal a{
+    letter-spacing: .3em;
+}
+
+ul.menu_principal { 
+    background-color: darkblue;
+}
