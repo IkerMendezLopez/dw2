@@ -17,7 +17,7 @@
         <table>
             <tr>
                 <td><label for="nomuser">Nombre de usuario:</label></td>
-                <td><input type="text" name="nombre"></td>
+                <td><input type="text" name="user"></td>
                 <td rowspan="2"><input type="submit" name="entrar" value="Entrar"></td>
             </tr>
             <tr>

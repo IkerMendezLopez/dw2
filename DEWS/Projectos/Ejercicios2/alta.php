@@ -53,7 +53,7 @@
             fwrite($file,  $linea);
             fclose($file);
             echo $_POST["newuser"].": Has sido dado de alta";
-            echo "<h1><u><a href='./charla.php'>ENTRAR AL CHAT</a></u></h1>";
+            echo "<h1><u><a href='./charla.php?user=".$_POST["newuser"]."'>ENTRAR AL CHAT</a></u></h1>";
         }
     } else {
         echo "<h3>REGISTRATE</h3>";
