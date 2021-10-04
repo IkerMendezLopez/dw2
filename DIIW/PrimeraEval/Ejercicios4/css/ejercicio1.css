@@ -1,0 +1,29 @@
+h1{ 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 > span {
+    color:red;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+div, p {
+    font-weight: bold;
+    color: white;
+    border: thick solid black;
+    background-color: green;
+    width: 25%;
+    height: 75px;
+    margin: 12px 0px;
+}
+p{ 
+    background-color:red;
+}
+.span1{
+    color: white;
+    border: thick solid black;
+    background-color: blue;
+    margin-right: 30px;
+}

@@ -1,0 +1,45 @@
+
+h1{ 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 > span {
+    color:red;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+div{
+    font-size: 1.5em;
+    font-weight: bold;
+    border: thick solid black;
+    width: 25%;
+    height: 75px;
+    margin: 12px 0px;
+}
+.div1{
+    background-color:red;
+    position: relative;
+}
+.div2{
+    background-color:blue;
+    position: relative;
+    left: 100px;
+    top: -50px;
+}
+.div3{
+    background-color:green;
+    position: relative;
+    
+}
+.div4{
+    background-color:lightblue;
+    position: relative;
+    left: 250px;
+    top: -200px;
+}
+.div5{
+    background-color:lightgreen;
+    position: relative;
+    right: 50;
+}
