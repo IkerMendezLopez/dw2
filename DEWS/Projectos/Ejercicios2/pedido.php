@@ -47,7 +47,7 @@
                     <td><a href="pedido.php?precioArt=$arrArt[1]&precioTotal=$precioF">Añadir unidad</a></td>
                 HTML;
                     if(isset($_FILES["archivo"]) && $arrArt[0]==$_POST["nombre"]){
-                        echo "<td> <a href=./' ". $_POST["nombre"] . "txt></td>";
+                        echo "<td><a href='./". $_POST["nombre"] . ".txt'>Documento</a></td>";
                     }
                 echo"</tr>";
         }

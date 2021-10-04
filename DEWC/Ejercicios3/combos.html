@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Combos</title>
+</head>
+
+<body>
+    <script>
+        var provincias = new Array("Araba", "Bizkaia", "Gipuzkoa", "Nafarroa", "Lapurdi", "Zuberoa", "Nafarroa Beherea")
+
+        var municipios_1 = new Array("Seleccione Municipio", "Vitoria-Gasteiz", "Amurrio", "El Ciego", "La Guardia");
+        var municipios_2 = new Array("Seleccione Municipio", "Bilbao", "Barakaldo", "Durango", "Elorrio", "Muzkiz");
+        var municipios_3 = new Array("Seleccione Municipio", "Donostia-San Sebastián", "Arrasate-Mondragón", "Eibar");
+        var municipios_4 = new Array("Seleccione Municipio", "Iruña", "Burlada", "Estella-Lizarra", "Tafalla");
+        var municipios_5 = new Array("Seleccione Municipio", "Baiona", "Bastida", "Hendaya", "Miarritze");
+        var municipios_6 = new Array("Seleccione Municipio", "Maule", "Barkoxe", "Sohüta");
+        var municipios_7 = new Array("Seleccione Municipio", "Baigorri", "Garazi", "Oztibarre");
+
+        var todosMunicipios = [
+            [],
+            municipios_1,
+            municipios_2,
+            municipios_3,
+            municipios_4,
+            municipios_5,
+            municipios_6,
+            municipios_7,
+        ];
+        window.onload = function(){
+            let pro = document.getElementById("provincias");
+            for (let index = 0; index < provincias.length; index++) {
+                let provincia =document.createElement("option");
+                provincia.appendChild(document.createTextNode(provincias[index]));
+                pro.appendChild(provincia);
+            }
+           
+        }
+        
+        function relacionar(){
+            let mun = document.getElementById("municipios");
+            mun.innerHTML = '';
+            let pro = document.getElementById("provincias");
+            let seleccionado = pro.selectedIndex;
+            for (let index = 0; index < todosMunicipios[seleccionado].length; index++) {
+                let municipio =document.createElement("option");
+                municipio.appendChild(document.createTextNode(todosMunicipios[seleccionado][index]));
+                mun.appendChild(municipio);
+            }
+        }
+
+        function aniadirTexto(){
+            let texto = document.getElementById("texto");
+            texto.innerHTML = "";
+            let pro = document.getElementById("provincias");
+            let seleccionado1 = pro.selectedIndex;
+            let proText = provincias[seleccionado1-1];
+            let mun = document.getElementById("municipios");
+            let seleccionado2 = mun.selectedIndex;
+            let munText = todosMunicipios[seleccionado1][seleccionado2];
+            texto.appendChild(document.createTextNode("Has seleccionado " + munText + " en " + proText));
+        }
+       
+    </script>
+    <select id="provincias" onChange=relacionar()>
+        <option>Seleccione Provincia</option>
+    </select>
+    <select id="municipios" onChange=aniadirTexto()>
+        <option>Seleccione Municipio</option>
+    </select>
+    <p id="texto"></p>
+</body>
+
+</html>

@@ -16,10 +16,10 @@
     </head>
     <body>
         <?php
-        $handle = fopen("./archivos/urls.txt", "r");
+        $handle = fopen("../archivos/urls.txt", "r");
         while (!feof($handle)) {
             $line = fgets($handle);
-            $line = explode("   ", $line);
+            $line = explode(" ", $line);
             echo "<a href=\"{$line[0]}\">{$line[1]}</a> <br>";
         }
         fclose($handle);
