@@ -33,13 +33,23 @@
             municipios_7,
         ];
         window.onload = function(){
-            let pro = document.getElementById("provincias");
+            let pro = document.createElement("select");
+            pro.setAttribute("id", "provincias");
+            pro.setAttribute("onChange", "relacionar()");
+            let seleccionar = document.createElement("option");
+            seleccionar.appendChild(document.createTextNode("Seleccione Provincia"));
+            pro.appendChild(seleccionar);
             for (let index = 0; index < provincias.length; index++) {
                 let provincia =document.createElement("option");
                 provincia.appendChild(document.createTextNode(provincias[index]));
                 pro.appendChild(provincia);
             }
-           
+            let mun = document.createElement("select");
+            mun.setAttribute("id", "provincias");
+            mun.setAttribute("onChange", "aniadirTexto()");
+            mun.appendChild(seleccionar);
+            document.body.appendChild(pro);
+            document.body.appendChild(mun);
         }
         
         function relacionar(){
@@ -65,15 +75,6 @@
             let munText = todosMunicipios[seleccionado1][seleccionado2];
             texto.appendChild(document.createTextNode("Has seleccionado " + munText + " en " + proText));
         }
-       
     </script>
-    <select id="provincias" onChange=relacionar()>
-        <option>Seleccione Provincia</option>
-    </select>
-    <select id="municipios" onChange=aniadirTexto()>
-        <option>Seleccione Municipio</option>
-    </select>
-    <p id="texto"></p>
 </body>
-
 </html>
