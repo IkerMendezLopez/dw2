@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Cambiar este objeto
+        function imprimeDatos(producto) {
+            document.write(`Producto Alimenticio[codigo=${producto.codigo}, nombre=${producto.nombre}, precio=${producto.precio} ]`)
+        }
+        var Producto_Alimenticio = new Object();
+        Producto_Alimenticio.codigo = '1234534';
+        Producto_Alimenticio.nombre = 'seta';
+        Producto_Alimenticio.precio = 16.2;
+        imprimeDatos(Producto_Alimenticio);
+    </script>
+</body>
+
+</html>

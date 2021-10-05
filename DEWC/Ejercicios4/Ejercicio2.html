@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <h3>Datos de las palabras</h3>
+    <script>
+        let resp = 's';
+        let arr = [];
+        do{
+            let palabra = prompt('Introduce una palabra');
+            while(palabra==''){
+                palabra = prompt('Error, introduce una palabra');
+            }
+            arr.push(palabra);
+            resp = prompt('Desea seguir introduciendo palabras?');
+        }while(resp!='n' && resp!='no' && resp!='N' && resp!='NO');
+        document.write(`<p>Primera palabra introducida: ${arr[0]}</p>`);
+        document.write(`<p>Ultima palabra introducida: ${arr[arr.length-1]}</p>`);
+        document.write(`<p>Numero de palabras: ${arr.length}</p>`);
+        document.write("Palabras ordenadas alfabeticamente: ");
+        arr.sort();
+        document.write("<ol>");
+        for (let index = 0; index < arr.length; index++) {
+            document.write(`<li>${arr[index]}</li>`);
+        }
+        document.write("</ol>");
+    </script>
+</body>
+</html>

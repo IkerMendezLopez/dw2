@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <script>
+        function suma(n1, n2){
+            let res = n1 + n2;
+            return res;
+        }
+        let n1 = parseInt(prompt("Introduce primer numero"));
+        while(!Number.isInteger(n1)){
+            n1 = parseInt(prompt("Error, vuelve a introducir el primer numero"));
+        }
+        let n2 = parseInt(prompt("Introduce segundo numero"));
+        while(!Number.isInteger(n2)){
+            n2 = parseInt(prompt("Error, vuelve a introducir el segundo numero"));
+        }
+        res = suma(n1, n2);
+        document.write(`${n1} + ${n2} = ${res}`);
+    </script>
+</body>
+</html>
