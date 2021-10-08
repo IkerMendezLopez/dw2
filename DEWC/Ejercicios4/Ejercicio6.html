@@ -12,15 +12,19 @@
 
 <body>
     <script>
-        // Cambiar este objeto
-        function imprimeDatos(producto) {
-            document.write(`Producto Alimenticio[codigo=${producto.codigo}, nombre=${producto.nombre}, precio=${producto.precio} ]`)
+        function Producto_Alimenticio(codigo, nombre, precio){
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
         }
-        var Producto_Alimenticio = new Object();
-        Producto_Alimenticio.codigo = '1234534';
-        Producto_Alimenticio.nombre = 'seta';
-        Producto_Alimenticio.precio = 16.2;
-        imprimeDatos(Producto_Alimenticio);
+        function imprimeDatos(producto) {
+            document.write(`Producto Alimenticio[Codigo=${producto.codigo}, Nombre=${producto.nombre}, Precio=${producto.precio} ]<br>`)
+        }
+        let productos = [];
+        productos[0]= new Producto_Alimenticio("h1w7", "patatas", 1.20);
+        productos[1]= new Producto_Alimenticio("h1w8", "xanos", 1);
+        productos[2]= new Producto_Alimenticio("h1w9", "ensaimadas", 2.30);
+        productos.forEach(producto => imprimeDatos(producto));
     </script>
 </body>
 

@@ -1,0 +1,68 @@
+* {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+    color: navy;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.capapadre {
+    background-color: #CCF;
+    border: thin solid #9933ff;
+}
+
+.capa {
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.capahija1 {
+    background-color: #6CF;
+    border: thin solid blue;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 1rem;
+    
+}
+
+
+.capahija2 {
+    background-color: #FCF;
+    border: thin solid purple;
+    width: 60%;
+    display: inline-block;
+    padding: 1rem;
+
+}
+
+.capahija2 img {
+    border: thin tomato solid;
+    width: 15%;
+    display: block;
+
+}
+
+
+.capahija3 {
+    background-color: transparent;
+    border: thin solid blue;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+}
+
+
+.capahija4 {
+    background-color: grey;
+    border: thin solid red;
+    display: inline-block;
+    width: 39.7%;
+    vertical-align:top;
+}

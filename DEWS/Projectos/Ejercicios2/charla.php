@@ -9,8 +9,19 @@
 </head>
 
 <body>
+    <?php 
+    function aniadirFila($file, $line){
+        $file = fopen($file, "a");
+        fwrite($file, "\n");
+        fwrite($file, $line);
+        fclose($file);
+    }
+    if(isset($_POST['msg'])){
+        aniadirFila("charla.txt", $_POST['user'] . ": " . $_POST['msg']);
+    }
+    ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <textarea></textarea><br>
+        <iframe src="contenido_charla.php"></iframe><br>
         <label for="user">Usuario:
             <?php
             if (isset($_GET['user'])) {

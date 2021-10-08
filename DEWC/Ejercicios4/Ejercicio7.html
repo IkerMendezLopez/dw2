@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+
+<body>
+    <script>
+        const esLetra = (caracter) => {
+            let ascii = caracter.toUpperCase().charCodeAt(0);
+            return ascii > 64 && ascii < 91;
+        };
+
+        function isNumber(n) {
+            return Number(n) === n;
+        }
+
+        function comprobarLetra(n) {
+            var letras = new Array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q',
+                'V',
+                'H', 'L', 'C', 'K', 'E', 'T');
+            return letras[n % 23];
+
+        }
+
+        function comprobar() {
+            let dni = document.getElementById("dni").value;
+            console.log(dni);
+            if (dni == "") {
+                alert("Campo dni vacio");
+            } else {
+                if (dni.length != 9) {
+                    alert("Introduce 9 caracteres");
+                } else {
+                    if (!esLetra(dni.charAt(dni.length - 1))) {
+                        alert("Falta letra");
+                    } else {
+                        let letra = dni.charAt(dni.length - 1);
+                        let numeros = dni.substring(0, dni.length - 1);
+                        let faltaN = false;
+                        for (let index = 0; index < numeros.length; index++) {
+                            if (isNaN(parseInt(numeros.charAt(index)))) {
+                                faltaN = true;
+                                break;
+                            }
+                        }
+                        if (faltaN) {
+                            alert("Faltan numeros");
+                        } else {
+                            let num = parseInt(numeros);
+                            if (letra != comprobarLetra(num)) {
+                                alert("Letra incorrecta");
+                            } else {
+                                alert("Correcto");
+                                document.getElementById("dni").value = "";
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    </script>
+    <form action="#">
+        <label for="dni">Dni:</label>
+        <input type="text"
+            name="dni"
+            id="dni">
+        <input type="button"
+            value="Comprobar"
+            onclick="comprobar()">
+    </form>
+</body>
+
+</html>

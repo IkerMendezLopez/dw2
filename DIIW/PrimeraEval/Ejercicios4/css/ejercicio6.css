@@ -4,4 +4,32 @@
     height: 600px;
     margin: 0 auto;
     margin-top: 50px;
+    position: relative;
+}
+.css{
+    width: 350px;
+    background-color:lightgrey;
+    font-family: 'Algerian';
+    font-size:200px;
+    color: blue;
+    position: absolute;
+    top: 250px;
+    left: 120px;
+}
+
+.efectos{
+    font-family: Arial;
+    font-size:70px;
+    color:#ff00ff;
+    position: absolute;
+    top: 230px;
+    left:40px;
+}
+.hojas{
+    font-family: Arial;
+    font-size: 90px;
+    color:red;
+    position: absolute;
+    top:255px;
+    left: 40px;
 }
