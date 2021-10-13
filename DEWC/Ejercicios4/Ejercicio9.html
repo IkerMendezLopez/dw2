@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio9</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        table{
+            width: 50%;
+            margin: 0 auto;
+
+        }
+        table, td, tr,th{
+            border-style: double;
+        }
+        
+    </style>
 </head>
 <body>
+    <h1>VALIDANDO FECHAS</h1>
     <script>
         let cadena = prompt("Introduce una fecha (dd/mm/yyyy)");
         let arr = cadena.split("/");
@@ -14,9 +33,45 @@
         cadena = arr.join("/");
         var fecha = new Date(cadena);
         console.log(fecha.toString());
-        function comprobarFecha(){
-            
-        }   
+        comprobarFecha(fecha);
+        function comprobarFecha(fecha){
+            if(isNaN(fecha.getTime())){
+                alert("Fecha incorrecta");
+            }else{
+                dibujar(fecha);
+            }
+        }  
+
+        function dibujar(fecha){
+            document.write(`Fecha introducida: ${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}<br>`);
+            document.write(`Ese mismo día en...<br>`);
+            arr = [];
+            arrDias = ["Domingo","Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+            fechaAux = new Date(fecha.toString());
+            console.log(fechaAux.toString());
+            for (let index = 0; index < 5; index++) {
+                fechaAux.setYear(fecha.getFullYear()-index);
+                console.log(fechaAux.toString());
+                console.log(fechaAux.getDay());
+                arr[index]= arrDias[fechaAux.getDay()];
+            }
+            document.write(`<table>
+                                <tr>
+                                    <th>el año...</th>
+                                    <td>${fecha.getFullYear()-4}</td>
+                                    <td>${fecha.getFullYear()-3}</td>
+                                    <td>${fecha.getFullYear()-2}</td>
+                                    <td>${fecha.getFullYear()-1}</td>
+                                    <td>${fecha.getFullYear()}</td>
+                                </tr>
+                                <tr>
+                                    <th>era un...</th>`);
+            for (let index = 0; index < arr.length; index++) {
+                document.write(`    <td>${arr[arr.length - (index+1)]}</td>`);
+            }
+            document.write(`    </tr>
+                            </table>`);
+        }
 
 
     </script>

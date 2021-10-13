@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+<body>
+    <input type="text" name="cadena" id="cadena">
+    <input type="submit" value="Tipo de letra" name="boton" id="boton">
+    <script>
+        document.getElementById("boton").addEventListener("click", () => {tipoLetras(document.getElementById("cadena").value)});
+        function tipoLetras(cadena){
+            console.log(cadena);
+            let mayus = false;
+            let minus = false;
+            for (let index = 0; index < cadena.length; index++) {
+                if(document.getElementById("cadena").value == ""){
+                   alert("Campo vacio");
+                }else{
+                    let n = cadena.charCodeAt(index);
+                    if(n>=65 && n<=90){
+                        mayus=true;
+                    }else if(n>=97 && n<=122){
+                        minus=true;
+                    }
+                    let res;
+                    if(minus && !mayus){
+                        res=`La cadena ${cadena} solo contiene minusculas`;
+                    }else if(mayus && !minus){
+                        res=`La cadena ${cadena} solo contiene mayusculas`;
+                    }else if(mayus && minus){
+                        res=`La cadena ${cadena} contiene mayusculas y minusculas`;
+                    }else{
+                        res=`La cadena ${cadena} no contiene ni mayusculas, ni minusculas`;
+                    }
+                    console.log(minus + " - " + mayus);
+
+                    let ventana = window.open("Ejercicio10_Ventana.html", "Emergente", "width=500, height=200");
+                    ventana.resul = res;
+                    //ventana.onbeforeunload = () => window.location.replace("https://www.google.es/");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
