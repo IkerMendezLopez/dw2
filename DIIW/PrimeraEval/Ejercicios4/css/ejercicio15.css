@@ -1,0 +1,51 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+header {
+	background: #222;
+	display: flex;
+	justify-content: flex-end;
+}
+
+header img {
+	margin-top: 3rem;
+}
+.container {
+	display: flex;
+}
+
+h1 {
+	text-align: center;
+}
+
+.articulo1 {
+	background: lightblue;
+}
+
+.articulo2 {
+	background: lightgreen;
+}
+
+.articulo3 {
+	background: lightseagreen;
+}
+
+
+
+.container > article {
+	flex: 0 0 33%;
+	padding: 1rem;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: .5rem;
+}
+
+button {
+	align-self: center;
+	padding: 0.3rem;
+}
+
+
+
+

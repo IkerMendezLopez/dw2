@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+nav {
+    background-color: blue;
+}
+
+.barra {
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

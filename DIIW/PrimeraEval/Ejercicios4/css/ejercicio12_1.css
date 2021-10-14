@@ -1,0 +1,43 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.container {
+
+    display: flex;
+    background-color: black;
+    height: 100px;
+    margin: 1rem;
+    padding: 1rem;
+    gap: 7rem
+}
+
+.caja {
+    background-color: #555;
+    color: white;   
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.uno {
+    width: 70px;
+    order: 3;
+}
+
+.dos {
+    width: 70px;
+    order: 1;
+}
+
+.tres {
+    width: 70px;
+    order: 4;
+}
+.cuatro {
+    width: 120px;
+    order: 2;
+}

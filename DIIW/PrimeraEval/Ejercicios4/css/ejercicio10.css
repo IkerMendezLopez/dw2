@@ -53,5 +53,35 @@ p {
 .parrafo2{
     background-color: lightcyan;
     padding: 10px;
-    width: 60px;
+}
+
+.img1 {
+	float: left;
+}
+
+.parrafo3 {
+	background: lime;
+
+}
+
+.parrafo4 {
+	background: yellow;
+}
+
+.img2 {
+	float: right;
+}
+
+.img3 {
+	float: left;
+}
+
+a {
+	clear: both;
+	background: cyan;
+	display: block;
+}
+
+.parrafo5 {
+	clear: both;
 }

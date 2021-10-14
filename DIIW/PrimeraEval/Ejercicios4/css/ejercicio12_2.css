@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.body {
+    height: 400px;
+}
+
+.container {
+    display: flex;
+    width: 240px;
+    flex-flow: column wrap;
+    background-color: black;
+    margin: 1rem;
+    padding: 1rem;
+    gap: .2rem;
+    max-height: 400px;
+    align-content: flex-start;
+}
+.caja {
+    align-self: flex-start;
+    background-color: #555;
+    color: white;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;  
+}
+.cuatro {
+    height: 180px;
+}

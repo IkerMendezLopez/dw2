@@ -1,0 +1,35 @@
+* {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: thin solid #555;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+header {
+    flex: 1 0 100%;
+    background: lightsalmon;
+    height: 10rem;
+}
+
+nav, aside {
+    flex: 0 0 20%;
+    background-color: MediumSlateBlue;
+    height: 100%;
+}
+
+article{
+    flex-grow: 1;
+    background-color: #93C572;
+}
+
+footer {
+    flex: 1 0 100%;
+    background-color: lightcoral;
+    height: 100px;
+}

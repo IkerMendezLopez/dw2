@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	gap: 2px;
+	flex-flow: row nowrap;
+	background: darkred;
+	padding: 10px;
+	height: 500px;
+}
+
+.container > p {
+	flex: 1 1 33%;
+	padding: 10px;
+	background-color: orange;
+    color: white;
+}

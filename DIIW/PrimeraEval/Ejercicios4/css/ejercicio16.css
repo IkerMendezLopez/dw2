@@ -1,0 +1,23 @@
+*{
+    margin:0 auto;
+    color: gray;
+    font-family: "Helvetica Neue",Helvetica;
+    text-align: center;
+}
+.tabla {
+	display: table;
+	table-layout: fixed;
+}
+
+.celda  {
+	display: table-cell;
+	vertical-align: top;
+	border : 1px solid gray;
+	padding: 1rem;
+}
+
+.celda:first-of-type {
+	width: 100px;
+}
+
+
