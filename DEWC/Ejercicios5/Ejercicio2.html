@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <style type="text/css">
+    *{
+        text-align: center;
+        margin: 0 auto;
+    }
+    table, tr, th , td{
+        border: 1px solid gray;
+       
+    }
+    td{
+        text-align: left;
+        padding-right: 5rem;
+    }
+    </style>
+    <script>
+        function enviar(){
+            let procesadores = document.getElementsByName("procesador");
+            let sistemas = document.getElementsByName("sistema");
+            let procesador;
+            let sistema;
+            for (let index = 0; index < procesadores.length; index++) {
+                if(procesadores[index].checked){
+                    console.log(procesadores[index].value);
+                    procesador= document.getElementById(procesadores[index].value).innerHTML;
+                }
+            }
+            for (let index = 0; index < sistemas.length; index++) {
+                if(sistemas[index].checked){
+                    console.log(sistemas[index].value);
+                    sistema= document.getElementById(sistemas[index].value).innerHTML;
+                }
+            }
+            alert("Has seleccionado el procesador "+ procesador + " con sistema operativo " + sistema);
+        }
+    </script>
+</head>
+<body>
+    <h1>RADIO BUTTON</h1><br>
+    <p>Selecciona las opciones deseadas</p><br>
+    <form>
+    <table>
+        <tr>
+            <th>Procesador</th>
+            <th>Sistema Operativo</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="procesador" value="mac" checked>
+                <label for="mac" id="mac">Mac Pro 2,0 Mhz</label><br>
+                <input type="radio" name="procesador" value="i3">
+                <label for="i3" id="i3">Intel i3 1,9 Mhz</label><br>
+                <input type="radio" name="procesador" value="i5">
+                <label for="i5" id="i5">Intel i5 2,2 Mhz</label>
+            </td>
+            <td>
+                <input type="radio" name="sistema" value="xp"  checked>
+                <label for="sistema" id="xp">Windows XP</label><br>
+                <input type="radio" name="sistema" value="w7">
+                <label for="sistema" id="w7">Windows 7</label><br>
+                <input type="radio" name="sistema" value="ws8">
+                <label for="sistema" id="ws8">Windows Server 2008</label>
+            </td>
+        </tr>
+    </table><br>
+    <input type="button" value="Enviar" onclick="enviar()">
+    <input type="reset" value="Limpiar">
+</form>
+</body>
+</html>

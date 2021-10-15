@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio11</title>
+</head>
+<body>
+    <script>
+        
+        let nSecreto = Math.floor(Math.random()*100+1);
+        //console.log(nSecreto);
+        let cont =0;
+        let acertado = false;
+        while(!acertado){
+            let n = prompt("Introduce un numero(1-100):");
+            while(isNaN(n)){
+                alert(n + " no es un numero");
+                n = prompt("Introduce un numero(1-100):");
+            }
+            if(n==nSecreto){
+                acertado = true;
+            }else if(n<nSecreto){
+                alert("El numero es MAYOR");
+            }else{
+                alert("El numero es MENOR");
+            }
+            cont++;
+        }
+        document.write("<h1>FELICIDADES!</h1>");
+        document.write("<p>Has adivinado el numero en "+cont+" intentos </p>");
+
+        
+        
+    </script>
+</body>
+</html>

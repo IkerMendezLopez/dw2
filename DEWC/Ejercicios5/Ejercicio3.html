@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <style type="text/css">
+        *{
+            text-align: center;
+            margin: 0 auto;
+        }
+        table, tr, th , td{
+            border: 1px solid gray;
+           
+        }
+        td{
+            text-align: left;
+            padding-right: 5rem;
+        }
+        option{
+            text-align: left;
+        }
+        </style>
+        <script>
+            function enviar(){
+                let procesadores = document.getElementById('procesadores');
+                let pro = procesadores.options[procesadores.selectedIndex].text;
+                let sistemas = document.getElementById('sistemas');
+                let arr = [];
+                for (let index = 0; index < (sistemas.options).length; index++) {
+                    if(sistemas.options[index].selected){
+                        arr.push(sistemas.options[index].text);
+                    }   
+                }
+                let texto = "Has seleccionado el procesador " + pro + " con sistema operativo ";
+                for (let index = 0; index < arr.length; index++) {
+                    texto+=arr[index];
+                    if(index==arr.length-2){
+                        texto += " y ";
+                    }else if(index<arr.length-2){
+                        texto += " , ";
+                    }  
+                }
+                alert(texto);
+            }
+        </script>
+</head>
+<body>
+    <h1>SELECT</h1><br>
+    <p>Selecciona las opciones deseadas</p><br>
+    <form>
+        <table>
+            <tr>
+                <th>Procesador</th>
+                <th>Sistema Operativo</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="procesadores" id="procesadores">
+                        <option value="mac">Mac Pro 2,0 Mhz</option>
+                        <option value="i3">Intel i3 1,9 Mhz</option>
+                        <option value="i5">Intel i5 2,2 Mhz</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="sistemas" id="sistemas" multiple size="3">
+                        <option value="xp">Windows XP</option>
+                        <option value="w7">Windows 7</option>
+                        <option value="ws8">Windows Server 2008</option>
+                    </select>
+                </td>
+            </tr>
+        </table><br>
+        <input type="button" value="Enviar" onclick="enviar()">
+        <input type="reset" value="Limpiar">
+    </form>
+</body>
+</html>

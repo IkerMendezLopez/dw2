@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+    <style type="text/css">
+    *{
+        text-align: center;
+    }
+    </style>
+    <script>
+        function enviar(){
+            let valores= "Has seleccionado las opciones: \n";
+            let inputElements = document.getElementsByName("check");
+            let alguno = false;
+            for (let index = 0; index < inputElements.length; index++) {
+                if(inputElements[index].checked){
+                    valores += "*"+inputElements[index].value+"\n";
+                    alguno=true;
+                }
+            }
+            if(!alguno){
+                valores="No has seleccionado ningun CheckBox";
+            }
+            alert(valores);
+        }
+    </script>
+</head>
+<body>
+    <h1>CHECKBOX</h1>
+    <p>Selecciona las opcines deseadas</p>
+    <form>
+        <input type="checkbox" id="opc1" name="check" value="opc1">
+        <label for="opc1">opc1</label><br>
+        <input type="checkbox" id="opc2" name="check" value="opc2">
+        <label for="opc2">opc2</label><br>
+        <input type="checkbox" id="opc3" name="check" value="opc3">
+        <label for="opc3">opc3</label><br>
+        <input type="checkbox" id="opc4" name="check" value="opc4">
+        <label for="opc4">opc4</label><br><br>
+        <input type="button" value="Enviar" onclick="enviar()">
+        <input type="reset" value="Limpiar">
+    </form>
+</body>
+</html>
