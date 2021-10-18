@@ -8,5 +8,8 @@
 </head>
 <body>
     <a href= "pedidoplato.php">PRIMER PLATO</a>
+    <a href= "pedidoplato.php">SEGUNDO PLATO</a>
+    <a href= "pedidoplato.php">POSTRE</a>
+    <a href= "pedidoplato.php">BEBIDA</a> 
 </body>
 </html>

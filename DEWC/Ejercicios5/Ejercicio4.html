@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+    <script>
+
+        function validar(){
+            if(comprobar()){
+                comprobarLetra();
+            }
+        }
+
+        function comprobar(){
+            let dni = document.getElementById("dni").value;
+            if(dni.length!=8){
+                alert("Introduce 8 numeros");
+                return false;
+            }else{
+                for (var i = 0; i < dni.length; i++){
+                    if(isNaN(dni.charAt(i))){
+                        alert("Introduce solo numeros");
+                        return false;
+                        break;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function comprobarLetra() {
+            var letras = new Array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q',
+                'V','H', 'L', 'C', 'K', 'E', 'T');
+            return letras[document.getElementById("dni").value % 23];
+
+        }
+    </script>
+</head>
+<body>
+    <h1>FORMULARIO</h1>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" size="50" autofocus><br>
+        <label for="dni">DNI:</label>
+        <input type="text" name="dni" size="10" id="dni" onblur="validar()">
+        <label for="letra">Letra:</label>
+        <input type="text" name="letra" size="1"><br>
+        <label for="clave">Clave:</label>
+        <input type="password" name="clave" size="10"><br>
+        <label for="opinion">Opinion</label><br>
+        <textarea cols="60" rows="7"></textarea>
+    </form>
+</body>
+</html>
