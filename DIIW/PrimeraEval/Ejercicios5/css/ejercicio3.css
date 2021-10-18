@@ -1,0 +1,28 @@
+* {
+    text-align: center;
+}
+
+.contenedor {
+	border: 5px solid black;
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+}
+
+body {
+	display: grid;
+	height: 70vh;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 5px;
+	justify-items: center;
+	align-items: center;
+}
+
+
+
+.otro {
+	background: blue;
+	align-self: flex-end;
+}

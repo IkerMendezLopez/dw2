@@ -1,0 +1,33 @@
+
+body{
+    color: white;
+    display: grid;
+    grid-template-areas: 
+	"header	header	header"
+	"nav 	nav		nav"
+	"aside	section	section"
+	"aside	section	section"
+	"aside	section	section"
+	"footer	footer	footer";
+	height: 100vh;
+}
+header{
+    grid-area: header;
+    background-color: 	rebeccapurple;
+}
+nav{
+    grid-area: nav;
+    background-color: cornflowerblue;
+}
+aside{
+    grid-area: aside;
+    background-color:purple;
+}
+section{
+    grid-area: section;
+    background-color:indigo;
+}
+footer{
+    grid-area: footer;
+    background-color:blueviolet
+}

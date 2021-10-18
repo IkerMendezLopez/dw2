@@ -1,0 +1,35 @@
+body{
+    display:grid;
+    grid-template:
+    "header header header header header"
+    "menu menu main right right"
+    "menu menu footer footer footer"
+    ;
+    height: 100vh;
+    gap:10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+div{
+    border: 5px solid black;
+}
+.n1{
+    grid-area: header;
+    background-color:blue;
+}
+.n2{
+    grid-area: menu;
+    background-color:red;
+}
+.n3{
+    grid-area: main;
+    border: none;
+}
+.n4{
+    grid-area: right;
+    background-color:green;
+}
+.n5{
+    grid-area: footer;
+    background-color:yellow;
+}
