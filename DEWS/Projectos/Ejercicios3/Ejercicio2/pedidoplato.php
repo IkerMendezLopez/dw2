@@ -22,11 +22,11 @@ if (!isset($_SESSION['sesion'])) {
     <form method="get" action="pedido.php">
         <?php
         if (isset($_SESSION['sesion']['comanda'][$_GET['tipo']])) {
-            $plato_viejo = $_SESSION['userdata']['comanda'][$_GET['tipo']];
-            echo "Estas a punto de cambiar $plato_viejo por:";
+            $plato_antes = $_SESSION['sesion']['comanda'][$_GET['tipo']];
+            echo "Va a cambiar su eleccion de $plato_antes por:<br>";
         }
         ?>
-        <select class="form-control" name="plato" id="plato">
+        <select name="plato" id="plato">
             <?php
             $platos = tipoPlatos($tipo);
             foreach ($platos as $key => $value) {
@@ -37,7 +37,7 @@ if (!isset($_SESSION['sesion'])) {
             ?>
         </select>
         <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
-        <input class="btn btn-success mt-2" type="submit" value="<?php echo 'Elegir ' . $tipo ?>">
+        <input type="submit" value="<?php echo 'Elegir ' . $tipo ?>">
 
 
     </form>

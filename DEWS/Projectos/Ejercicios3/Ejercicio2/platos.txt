@@ -1,4 +1,12 @@
 yatekomo primero 5
-solomillo segundo 15
+sopaespecialdelacasa primero 6
+golondrina primero 2
+solomillo segundo 20
+lagartijaviva segundo 5
+lagartijanoviva segundo 3
 copaLimoncello postre 5
+coladelagartija postre 3
+flashdelmercadona postre 2
 bertacola bebida 2
+roncola bebida 10
+sangredecristotija bebida 3
