@@ -9,7 +9,7 @@
 
         function validar(){
             if(comprobar()){
-                comprobarLetra();
+                dameLetra();
             }
         }
 
@@ -29,28 +29,134 @@
             }
             return true;
         }
+        function esNum(){
+            let car = document.getElementById("car");
+            let txt = document.getElementById("textArea");
+            if(isNaN(car.value)){
+                car.value=txt.getAttribute("maxlength");
+            }else{
+                console.log(txt.value.length);
+                if(txt.value.length>car.value){
+                    let resp= prompt("Ha introducido una cantidad de caracteres maxima inferior a los caracteres introducidos en la caja opinion. ¿Desea borrar el contenido de esta?(S/N)");
+                    if(resp=="S" || resp=="Y" || resp=="s" || resp=="y"){
+                        txt.value="";
+                        txt.setAttribute("maxlength", car.value);
+                    }else{
+                        car.value=txt.getAttribute("maxlength");
+                    }
+                }
+                
+            }
+           
+        }
 
-        function comprobarLetra() {
+        function dameLetra() {
             var letras = new Array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q',
                 'V','H', 'L', 'C', 'K', 'E', 'T');
-            return letras[document.getElementById("dni").value % 23];
-
+            let campoLetra=  document.getElementById("letra")
+           campoLetra.value = letras[document.getElementById("dni").value % 23];
+           campoLetra.style.backgroundColor= "green";
         }
+
+        function enviar(){
+            //nom,dni,clave,sexo,provincia
+            console.log("entra");
+            let errores=[];
+            if(document.getElementById("nombre").value==""){
+                errores.push("nombre");
+            }
+            if(document.getElementById("dni").value==""){
+                errores.push("dni");
+            }
+            if(document.getElementById("clave").value==""){
+                errores.push("clave");
+            }
+            let seleccionado = document.querySelector("input[name='sexo']:checked");
+            if(!seleccionado){
+                errores.push("sexo");
+            }
+            let provincias = document.getElementById("provincia");
+            if(provincias.selectedIndex==0){
+                errores.push("provincia");
+            }
+            let error;
+            if(errores.length==1){
+                error="Debes rellenar el campo "+ errores[0];
+                alert(error);
+            }else if(errores.length>1){
+                error="Debes rellenar los siguientes campos ";
+                for (let index = 0; index < errores.length; index++) {
+                    error+=errores[index];
+                    if(index==errores.length-2){
+                        error += " y ";
+                    }else if(index<errores.length-2){
+                        error += " , ";
+                    }  
+                }
+                alert(error);
+            }
+        }
+
     </script>
+    <style type="text/css">
+    .result{
+        position: absolute;
+        background-color: gray;
+        width:500px;
+        height: 500px;
+        left:600px;
+        top:100px;
+    }
+    </style>
 </head>
 <body>
-    <h1>FORMULARIO</h1>
-    <form>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" size="50" autofocus><br>
-        <label for="dni">DNI:</label>
-        <input type="text" name="dni" size="10" id="dni" onblur="validar()">
-        <label for="letra">Letra:</label>
-        <input type="text" name="letra" size="1"><br>
-        <label for="clave">Clave:</label>
-        <input type="password" name="clave" size="10"><br>
-        <label for="opinion">Opinion</label><br>
-        <textarea cols="60" rows="7"></textarea>
-    </form>
+    <div>
+        <h1>FORMULARIO</h1>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" size="50" autofocus><br>
+            <label for="dni">DNI:</label>
+            <input type="text" name="dni" size="10" id="dni" onblur="validar()">
+            <label for="letra">Letra:</label>
+            <input type="text" name="letra" size="1" id="letra" readonly><br>
+            <label for="clave">Clave:</label>
+            <input type="password" name="clave" id="clave" size="10"><br><br>
+            <label for="opinion">Opinion:</label><br>
+            <textarea cols="60" rows="7" maxlength="50" id="textArea"></textarea><br>
+            <label for="car">Numero máximo de caracteres:</label>
+            <input type="text" name="car" id="car" value="50" onBlur="esNum()"><br><br>
+            <label for="edad">Mayor de edad:</label>
+            <input type="checkbox" name="edad"><br>
+            <label for="sexoLbL">Sexo:</label>
+            <label for="M">Masculino</label>
+            <input type="radio" name="sexo">
+            <label for="F">Femenino</label>
+            <input type="radio" name="sexo"><br><br>
+            <label for="sueldo">Sueldo Anual:</label><br>
+            <input type="radio" name="sueldo">
+            <label for="uno">menos de 10000€:</label><br>
+            <input type="radio" name="sueldo" checked>
+            <label for="dos">de 10000€ a 20000€</label><br>
+            <input type="radio" name="sueldo">
+            <label for="tres">mas de 20000€</label><br><br>
+            <label for="provincia">Provincia:</label>
+            <select name="provincias" id="provincia">
+                <option value="0">Elegir provincia</option>
+                <option value="1">Alava</option>
+                <option value="2">Bizkaia</option>
+                <option value="3">Gipuzkoa</option>
+            </select>
+            <label for="hobbies">Hobbies:</label>
+            <select name="hobbies">
+                <option value="0">Chat</option>
+                <option value="1">Juegos</option>
+                <option value="2">Arte</option>
+            </select><br>
+            <input type="button" name="enviarBtn" value="Enviar" onClick="enviar()">
+            <input type="reset" name="limpiar" value="Limpiar">
+        </form>
+    </div>
+    <div class="result">
+    </div>
 </body>
 </html>
