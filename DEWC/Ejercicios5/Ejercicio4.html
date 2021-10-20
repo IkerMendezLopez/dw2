@@ -59,8 +59,6 @@
         }
 
         function enviar(){
-            //nom,dni,clave,sexo,provincia
-            console.log("entra");
             let errores=[];
             if(document.getElementById("nombre").value==""){
                 errores.push("nombre");
@@ -84,28 +82,82 @@
                 error="Debes rellenar el campo "+ errores[0];
                 alert(error);
             }else if(errores.length>1){
-                error="Debes rellenar los siguientes campos ";
-                for (let index = 0; index < errores.length; index++) {
-                    error+=errores[index];
-                    if(index==errores.length-2){
-                        error += " y ";
-                    }else if(index<errores.length-2){
-                        error += " , ";
-                    }  
-                }
+                error="Debes rellenar los siguientes campos " + escribirLista(errores);
                 alert(error);
+            }else{
+                dibujarResultado();
             }
         }
 
+        function escribirLista(arr){
+            let txt="";
+            for (let index = 0; index < arr.length; index++) {
+                txt+=arr[index];
+                if(index==arr.length-2){
+                    txt += " y ";
+                }else if(index<arr.length-2){
+                    txt += " , ";
+                }  
+            }
+            return txt;
+        }
+
+        function dibujarResultado(){
+            let div = document.querySelector(".result");
+            let titulo = document.createElement("h2");
+            titulo.innerHTML = "Datos del formulario";
+            div.appendChild(titulo);
+            let txt = document.createElement("div");
+            txt.innerHTML = "<p><strong>Nombre:</strong>" + document.getElementById("nombre").value + "</p>";
+            txt.innerHTML += "<p><strong>DNI:</strong>" + document.getElementById("dni").value + document.getElementById("letra").value+ "</p>";
+            txt.innerHTML += "<p><strong>Clave:</strong>"+ document.getElementById("clave").value + "</p>";
+            if(document.getElementById("textArea").value!=""){
+                txt.innerHTML += "<p><strong>Opinion:</strong>"+ document.getElementById("textArea").value+"</p>";
+                txt.innerHTML += "<p><strong>Longitud de la opinion:</strong>"+ document.getElementById("textArea").value.length+"</p>";
+            }
+            if(document.getElementById("edad").checked){
+                txt.innerHTML += "<p><strong>SI</strong> es mayor de edad</p>";
+            }else{
+                txt.innerHTML += "<p><strong>NO</strong> es mayor de edad</p>";
+
+            }
+            if(document.querySelectorAll("input[name='sexo']")[0].checked){
+                txt.innerHTML += "<p><strong>Sexo:</strong> Masculino</p>";
+            }else{
+                txt.innerHTML += "<p><strong>Sexo:</strong> Femenino</p>";
+            }
+            if(document.querySelectorAll("input[name='sueldo']")[0].checked){
+                txt.innerHTML += "<p><strong>Sueldo:</strong> Menos de 10000</p>";
+            }else if(document.querySelectorAll("input[name='sueldo']")[1].checked){
+                txt.innerHTML += "<p><strong>Sueldo:</strong> Entre 10000 y 20000</p>";
+            }else{
+                txt.innerHTML += "<p><strong>Sueldo:</strong> Mas de 20000</p>";
+            }
+            for (let index = 1; index < document.getElementById("provincia").length; index++) {
+                if(document.getElementById("provincia").selectedIndex==index){
+                    txt.innerHTML += "<p><strong>Provincia:</strong>"+document.getElementById("provincia")[index].innerHTML+"</p>";
+                }
+            }
+            let hobbies = [];
+            for (let index = 0; index < document.getElementById("hobbie").length; index++) {
+                if(document.getElementById("hobbie")[index].selected){
+                    hobbies.push(document.getElementById("hobbie")[index].innerHTML);
+                }
+            }
+            txt.innerHTML += "<p><strong>Hobbies:</strong> "+ escribirLista(hobbies)+"</p>";
+            div.appendChild(txt);
+        }
     </script>
     <style type="text/css">
     .result{
         position: absolute;
         background-color: gray;
         width:500px;
-        height: 500px;
         left:600px;
         top:100px;
+    }
+    h2{
+        color: blue;
     }
     </style>
 </head>
@@ -126,7 +178,7 @@
             <label for="car">Numero máximo de caracteres:</label>
             <input type="text" name="car" id="car" value="50" onBlur="esNum()"><br><br>
             <label for="edad">Mayor de edad:</label>
-            <input type="checkbox" name="edad"><br>
+            <input type="checkbox" name="edad" id="edad"><br>
             <label for="sexoLbL">Sexo:</label>
             <label for="M">Masculino</label>
             <input type="radio" name="sexo">
@@ -147,7 +199,7 @@
                 <option value="3">Gipuzkoa</option>
             </select>
             <label for="hobbies">Hobbies:</label>
-            <select name="hobbies">
+            <select name="hobbies" id="hobbie" multiple>
                 <option value="0">Chat</option>
                 <option value="1">Juegos</option>
                 <option value="2">Arte</option>
