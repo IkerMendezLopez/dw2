@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+    <script type="text/javascript">
+        function validarDni(dni) {
+            if (dni.length != 9) {
+                return false;
+            } else {
+                let numeros = dni.substring(0, dni.length - 1);
+                if (isNaN(numeros)) {
+                    return false;
+                } else {
+                    var letras = new Array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
+                        'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T');
+                    if (dni.toUpperCase().charAt(dni.length - 1) != letras[numeros % 23]) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+
+        function validarMail(mail) {
+            let partes = mail.split('@');
+            if (partes.length != 2) {
+                return false;
+            }
+            for (let i = 0; i < 2; i++) {
+                if ((partes[i].charAt(0).toLowerCase() == partes[i].charAt(0).toUpperCase()) && isNaN(partes[i].charAt(
+                        0))) {
+                    return false;
+                }
+                for (let index = 1; index < partes[i].length; index++) {
+                    if (isNaN(partes[i].charAt(index)) && (partes[i].charAt(index).toLowerCase() == partes[i].charAt(
+                            index).toUpperCase()) && (partes[i].charAt(index) != '-') && (partes[i].charAt(index) !=
+                            '.')) {
+                        return false;
+                    }
+                }
+            }
+            if (partes[1].indexOf('.') == -1) {
+                return false;
+            }
+            let partesPuntos = partes[1].split('.');
+            for (let i = 1; i < partesPuntos.length; i++) {
+                if (partesPuntos[i].length < 2 || partesPuntos[i].length > 4) {
+                    return false;
+                }
+                for (let index = 0; index < partesPuntos[i].length; index++) {
+                    if (partesPuntos[i].charAt(index).toLowerCase() == partesPuntos[i].charAt(index).toUpperCase()) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function validarCodPostal(cod) {
+            if (isNaN(cod)) {
+                return false;
+            }
+            if (cod.length != 5) {
+                return false;
+            }
+            if (parseInt(cod) < 1000 || parseInt(cod) > 52999) {
+                return false;
+            }
+            return true;
+        }
+
+        function validarFecha(fecha) {
+            let fechaValida = new Date(fecha);
+            if (fechaValida == 'Invalid Date') {
+                return false;
+            }
+            if (fechaValida.getYear() > new Date().getYear()) {
+                return false;
+            }
+            return true;
+        }
+
+        function escribirLista(arr) {
+            let txt = "";
+            for (let index = 0; index < arr.length; index++) {
+                txt += arr[index];
+                if (index == arr.length - 2) {
+                    txt += " y ";
+                } else if (index < arr.length - 2) {
+                    txt += " , ";
+                }
+            }
+            return txt;
+        }
+
+        function enviar() {
+            let errores = [];
+            if (!validarDni(document.getElementById("dni").value)) {
+                errores.push("DNI");
+            }
+            if (!validarMail(document.getElementById("mail").value)) {
+                errores.push("Mail");
+            }
+            if (!validarCodPostal(document.getElementById("codPostal").value)) {
+                errores.push("Codigo postal");
+            }
+            if (!validarFecha(document.getElementById("fecha").value)) {
+                errores.push("Fecha");
+            }
+            if (errores.length == 1) {
+                alert("El campo " + errores[0] + " es erroneo");
+            } else if (errores.length > 1) {
+                alert("Error en los campos: " + escribirLista(errores));
+            } else {
+                alert("Correcto");
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Validacion de datos</h1>
+    <form>
+        <label for="dni">DNI:</label>
+        <input type="text"
+            name="dni"
+            size="9"
+            id="dni"><br>
+        <label for="Email">Email:</label>
+        <input type="email"
+            name="email"
+            size="40"
+            id="mail"><br>
+        <label for="codPostal">Codigo Postal:</label>
+        <input type="text"
+            name="codPostal"
+            size="4"
+            id="codPostal"><br>
+        <label for="fecha">Fecha(dd/mm/aaaa):</label>
+        <input type="date"
+            name="fecha"
+            size="10"
+            id="fecha"><br>
+        <input type="button"
+            value="Enviar"
+            onclick="enviar()">
+        <input type="reset"
+            value="Limpiar">
+    </form>
+
+</body>
+
+</html>

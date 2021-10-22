@@ -141,7 +141,7 @@
             let hobbies = [];
             for (let index = 0; index < document.getElementById("hobbie").length; index++) {
                 if(document.getElementById("hobbie")[index].selected){
-                    hobbies.push(document.getElementById("hobbie")[index].innerHTML);
+                    hobbies.push(document.getElementById("hobbie" )[index].innerHTML);
                 }
             }
             txt.innerHTML += "<p><strong>Hobbies:</strong> "+ escribirLista(hobbies)+"</p>";
