@@ -52,8 +52,8 @@ if (isset($_POST['aniadir'])) {
         if (isset($_POST['productos']) && count($_POST['productos']) > 0) {
 
             foreach ($_POST['productos'] as $value) {
+                echo $_POST[$value];
                 $cant = intval($_POST[$value]);
-                
                 if (!isset($_SESSION['pedido'][$value])) $_SESSION['pedido'][$value] = 0;
                 $_SESSION['pedido'][htmlspecialchars($value) ] += $cant;
             }

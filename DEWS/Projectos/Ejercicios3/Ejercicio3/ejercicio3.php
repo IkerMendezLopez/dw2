@@ -7,8 +7,7 @@ if(!isset($_SESSION['unidades'])){
 }
 if (isset($_POST['aniadir'])) {
         if (isset($_POST['checkProductos']) && count($_POST['checkProductos']) > 0) {
-            foreach ($_POST['cant'] as $value) {
-                echo $value;
+            foreach ($_POST['checkProductos'] as $value) {
                 $cant = intval($_POST[$value]);
                 if (!isset($_SESSION['unidades'][$value])){
                     $_SESSION['unidades'][$value] = 0;
@@ -67,16 +66,16 @@ if (isset($_POST['aniadir'])) {
                         <?php 
                             foreach ($precioProd as $key => $value) {
                                 echo "<tr>";
-                                    echo "<td><input type='checkbox' name='checkProductos[]' id=". $key.">";
+                                    echo "<td><input type='checkbox' name='checkProductos[]' id=". $key." value=". $key.">";
                                     echo "<td>" . $key . "</td>";
                                     echo "<td>" . $value . " €</td>";
-                                    echo "<td><select name='cantidad'>";
+                                    echo "<td><select name='".$key."'>";
                                 for ($i = 0; $i <= 10; $i++){
                                     echo "<option value='$i'>$i</option>";
                                 }
                                 echo "</select></td>";
-                                if(isset($_SESSION['pedido'][$key])){
-                                    $unidades = $_SESSION['pedido'][$key];
+                                if(isset($_SESSION['unidades'][$key])){
+                                    $unidades = $_SESSION['unidades'][$key];
                                 }else{
                                     $unidades = 0; 
                                 } 

@@ -12,12 +12,13 @@ header {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background: url('http://placekitten.com/1920/1080');
+	background: url('http://placekitten.com/1920/540');
 	background-size: cover;
 }
 
 header h1 {
 	font-size: calc(1rem + 10vw);
+	color: white;
 }
 
 .contenedorPadre {
@@ -47,4 +48,7 @@ img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+span{
+	color: white;
 }

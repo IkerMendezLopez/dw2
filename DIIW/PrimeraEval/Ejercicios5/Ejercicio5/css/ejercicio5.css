@@ -1,0 +1,17 @@
+
+.wrapper {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fill, 250px);
+}
+
+.container {
+	display: block;
+	background: rebeccapurple;
+	color: white;
+	font-size: 5em;
+    font-family: arial;
+    padding: 15px;
+    padding-bottom: 30px;
+}
+

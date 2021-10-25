@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+    background-color: #EEE;
+    color: #222;
+    border: 2px outset #CCC;
+    padding: 3px 15px;
+    display: inline-block;
+    margin: 10px;
+}
+
+a:hover{
+    background-color: #CCB;
+}
+
+a:active{
+    border: 2px inset #000;
+}
+
