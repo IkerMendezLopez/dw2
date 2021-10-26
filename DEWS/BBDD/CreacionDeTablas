@@ -1,0 +1,53 @@
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `cadenaverificacion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `activo` tinyint(4) NOT NULL,
+  `falso` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cat` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `preciopartida` float NOT NULL,
+  `descripcion` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
+  `fechafin` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+	FOREIGN KEY(`id_cat`) REFERENCES  categoria(`id`),
+	FOREIGN KEY(`id_user`) REFERENCES  usuario(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `puja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_item` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `cantidad` float NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id`),
+	FOREIGN KEY(`id_item`) REFERENCES  item(`id`),
+	FOREIGN KEY(`id_user`) REFERENCES  usuario(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+CREATE TABLE IF NOT EXISTS `imagen` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_item` int(11) NOT NULL,
+  `imagen` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`),
+	FOREIGN KEY(`id_item`) REFERENCES  item(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;

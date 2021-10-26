@@ -1,56 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Ejercicio3</title>
+	<meta http-equiv="Content-Type"
+		content="text/html; charset=utf-8" />
+	<title>Ejercicio3</title>
 
-<style type="text/css">
-body {font-family: arial, helvetica;}
-#info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
-#info h1 {margin: 0;}
-</style>
+	<style type="text/css">
+		body {
+			font-family: arial, helvetica;
+		}
 
-<script type="text/javascript">
+		#info {
+			width: 160px;
+			border: thin solid silver;
+			padding: .5em;
+			position: fixed;
+		}
 
-function muestraInformacion(mensaje) {
-	document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
-	for(var i=1; i<mensaje.length; i++) {
-		document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
-	}
-}
+		#info h1 {
+			margin: 0;
+		}
+	</style>
 
-function tamanoVentanaNavegador(){
-	// Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
-	var dimensiones = [];
-	
-	if(typeof(window.innerWidth) == 'number') {
-		// No es IE
-		dimensiones = [window.innerWidth, window.innerHeight];
-	} else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-		//IE 6 en modo estandar (no quirks)
-		dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
-	} else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
-		//IE en modo quirks
-		dimensiones = [document.body.clientWidth, document.body.clientHeight];
-	}
-	
-	return dimensiones;
-}
-window.onload=function(){
-	document.onclick = informacion;
-}
+	<script type="text/javascript">
+		function muestraInformacion(mensaje) {
+			document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
+			for (var i = 1; i < mensaje.length; i++) {
+				document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
+			}
+		}
 
+		function tamanoVentanaNavegador() {
+			// Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+			var dimensiones = [];
 
-</script>
+			if (typeof (window.innerWidth) == 'number') {
+				// No es IE
+				dimensiones = [window.innerWidth, window.innerHeight];
+			} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement
+					.clientHeight)) {
+				//IE 6 en modo estandar (no quirks)
+				dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+			} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+				//IE en modo quirks
+				dimensiones = [document.body.clientWidth, document.body.clientHeight];
+			}
+
+			return dimensiones;
+		}
+		window.onload = function () {
+			document.onclick = (event) => pulsar(event);
+		}
+
+		function pulsar(e) {
+			let x = e.screenX;
+			let y = e.screenY;
+			let tamX = tamanoVentanaNavegador()[0] / 2;
+			let tamY = tamanoVentanaNavegador()[1] / 2;
+			let mensaje = ['Click'];
+			if (x > tamX && y < tamY) {
+				mensaje[1]= "Has pulsado en el cuadrante 1";
+			}else if (x < tamX && y < tamY) {
+				mensaje[1]= "Has pulsado en el cuadrante 2";
+			}else if (x < tamX && y > tamY) {
+				mensaje[1]= "Has pulsado en el cuadrante 3";
+			}else if (x > tamX && y > tamY) {
+				mensaje[1]= "Has pulsado en el cuadrante 4";
+			}
+			muestraInformacion(mensaje);
+		}
+	</script>
 </head>
 
 <body>
 
-<div id="info"></div>
+	<div id="info"></div>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 </body>
+
 </html>

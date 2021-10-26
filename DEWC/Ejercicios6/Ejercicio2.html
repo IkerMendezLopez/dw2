@@ -1,38 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Ejercicio2</title>
+	<meta http-equiv="Content-Type"
+		content="text/html; charset=utf-8" />
+	<title>Ejercicio2</title>
 
-<style type="text/css">
-body {font-family: arial, helvetica;}
-#info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
-#info h1 {margin: 0;}
-</style>
+	<style type="text/css">
+		body {
+			font-family: arial, helvetica;
+		}
 
-<script type="text/javascript">
-function muestraInformacion(mensaje) {
-	document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
-	for(var i=1; i<mensaje.length; i++) {
-		document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
-	}
-}
+		#info {
+			width: 160px;
+			height: 160px;
+			border: thin solid silver;
+			padding: .5em;
+			position: fixed;
+		}
 
-window.onload=function(){
-	document.onmousemove=informacion;
-	document.onkeypress=informacion;
-	
-}
-</script>
+		#info h1 {
+			margin: 0;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function muestraInformacion(mensaje) {
+			document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
+			for (var i = 1; i < mensaje.length; i++) {
+				document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
+			}
+		}
+
+		window.onload = function () {
+			document.onmousemove = (event) => raton(event);
+			document.onkeypress = (event) => teclado(event);
+		}
+
+
+		function teclado(e) {
+			let mensaje = [];
+			mensaje[0] = 'TECLADO';
+			mensaje[1] = "Caracter [" + e.key + "]";
+			mensaje[2] = "Código [" + e.keyCode + "]";
+			document.getElementById("info").style.backgroundColor = "#CCE6FF";
+			muestraInformacion(mensaje);
+		}
+
+
+		function raton(e) {
+			let mensaje = [];
+			mensaje[0] = 'RATON';
+			mensaje[1] = "Navegador [" + e.screenX + "," + e.screenY + "]";
+			mensaje[2] = "Cliente [" + e.clientX + "," + e.clientY + "]";
+			document.getElementById("info").style.backgroundColor = "white";
+			muestraInformacion(mensaje);
+		}
+	</script>
 </head>
 
 <body>
 
-<div id="info"></div>
+	<div id="info"></div>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 </body>
+
 </html>
