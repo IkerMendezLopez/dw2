@@ -42,10 +42,11 @@ document.getElementById("enviar").addEventListener("click", (e) =>{
             alert("Selecciona los campos " + errores[0] + " y " +errores[1]);
             break;
         default:
+            let div =document.getElementById("resultado");
+            div.innerHTML= "";
             document.getElementsByTagName("img")[0].style.display="block";
             setTimeout(() => {
                 document.getElementsByTagName("img")[0].style.display="none";
-                let div =document.getElementById("resultado");
                 let divInt = document.createElement("div");
                 div.appendChild(divInt);
                 let titulo = document.createElement("p");
@@ -55,13 +56,15 @@ document.getElementById("enviar").addEventListener("click", (e) =>{
                 let marcaP = document.createElement("p");
                 marcaP.innerHTML = "Marca: " + document.getElementById("marca")[document.getElementById("marca").selectedIndex].innerHTML;
                 divInt.appendChild(marcaP);
-                // VOY POR AQUI
-                // let anioP = document.createElement("p");
-                // anioP.innerHTML = "Año: " +[...document.getElementsByName("tipo")].find(e => e.checked).value;
-                // divInt.appendChild(anioP);
                 let tipoP = document.createElement("p");
                 tipoP.innerHTML = "Tipo: " +[...document.getElementsByName("tipo")].find(e => e.checked).value;
                 divInt.appendChild(tipoP);
+                let anioP = document.createElement("p");
+                anioP.innerHTML = "Año: " + document.getElementById("anio")[document.getElementById("anio").selectedIndex].innerHTML;
+                divInt.appendChild(anioP);
+                let precioP = document.createElement("p");
+                precioP.innerHTML = "Precio: " + seguro + "€";
+                divInt.appendChild(precioP);
             }, 5000);
             break;
     }
