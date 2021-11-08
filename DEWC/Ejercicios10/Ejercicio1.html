@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        #rojo{
+            width:100px;
+            height:100px;
+            display: none;
+        }
+        #azul{
+            background-color: blue;
+            width:100px;
+            height:100px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function mostrarRoja(){
+            document.getElementById("rojo").style.display= "inline-block";
+            document.getElementById("rojo").style.backgroundColor="red";
+
+        }
+        function ocultarRojo(){
+            document.getElementById("rojo").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div id="rojo"></div>
+    <div id="azul" onmouseover="mostrarRoja()" onmouseout="ocultarRojo()"></div>
+</body>
+</html>

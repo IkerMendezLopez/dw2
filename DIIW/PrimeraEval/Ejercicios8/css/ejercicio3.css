@@ -1,0 +1,24 @@
+p {
+	margin: 0 auto;
+	text-align: center;
+	column-count: 4;
+	max-width: 1140px;
+}
+
+@media screen and (max-width: 900px) {
+	p {
+		column-count: 3;
+	}
+}
+
+@media screen and (max-width: 700px) {
+    p {
+        column-count: 2;
+	}
+}
+
+@media screen and (max-width: 500px) {
+    p {
+        column-count: 1;
+    }
+}

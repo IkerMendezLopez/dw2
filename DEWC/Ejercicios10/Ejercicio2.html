@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" distanciaent="IE=edge">
+    <meta name="viewport" distanciaent="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <style>
+        img {
+            position: relative;
+        }
+    </style>
+    <script>
+        var velocidad;
+        var distancia;
+        window.onload = function () {
+            const botonArrancar = document.getElementById("botonArrancar");
+            const coche = document.getElementById("coche");
+            distancia = 0;
+        }
+
+        function arrancar() {
+            velocidad = 1;
+            setInterval(function () {
+                coche.style.left = distancia + "px";
+                distancia += velocidad;
+            }, 100);
+            botonArrancar.value = "parar";
+            botonArrancar.setAttribute("onclick", "parar()");
+        }
+
+        function parar() {
+            console.log("parar");
+            velocidad = 0;
+            distancia = 0;
+            botonArrancar.value = "arrancar";
+            botonArrancar.setAttribute("onclick", "arrancar()");
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button"
+        value="arrancar"
+        id="botonArrancar"
+        onclick="arrancar()">
+    <div>
+        <img src="./recursos_capas/car.png"
+            alt="car"
+            width="300"
+            height="300"
+            id="coche">
+    </div>
+</body>
+
+</html>
