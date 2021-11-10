@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#"
+                id="0">Ver imagen Ancares</a></li>
+        <li><a href="#"
+                id="1">Ver imagen Basilea</a></li>
+        <li><a href="#"
+                id="2">Ver una Cabrita</a></li>
+        <li><a href="#"
+                id="3">Ver imagen de Madrid</a></li>
+    </ul>
+    <div id="divImg">
+
+
+    </div>
+
+<script>
+    var arrImg = [];
+    var divImg = document.getElementById("divImg");
+    estiloDiv();
+    cargarArrayImagenes();
+    document.getElementById("0").addEventListener("click", function () {
+        divImg.innerHTML = '';
+        aniadirImg(this.id);
+    });
+    document.getElementById("1").addEventListener("click", function () {
+        divImg.innerHTML = '';
+        aniadirImg(this.id);
+    });
+    document.getElementById("2").addEventListener("click", function () {
+        divImg.innerHTML = '';
+        aniadirImg(this.id);
+    });
+    document.getElementById("3").addEventListener("click", function () {
+        divImg.innerHTML = '';
+        aniadirImg(this.id);
+    });
+
+    function estiloDiv(){
+        divImg.style.background= "#333333";
+        divImg.style.margin= "0 auto";
+        divImg.style.display="none";
+    }
+
+    function cargarArrayImagenes() {
+        var imgAncares= document.createElement('img');
+        imgAncares.setAttribute("src", "./recursos_capas/ancares.jpg");
+        imgAncares.setAttribute("alt", "Ancares");
+        arrImg.push(imgAncares);
+        var imgBasilea= document.createElement('img');
+        imgBasilea.setAttribute("src", "./recursos_capas/basel.jpg");
+        imgBasilea.setAttribute("alt", "Basilea");
+        arrImg.push(imgBasilea);
+        var imgCabrita= document.createElement('img');
+        imgCabrita.setAttribute("src", "./recursos_capas/cabra.jpg");
+        imgCabrita.setAttribute("alt", "Cabrita");
+        arrImg.push(imgCabrita);
+        var imgMadrid= document.createElement('img');
+        imgMadrid.setAttribute("src", "./recursos_capas/madridbanco.jpg");
+        imgMadrid.setAttribute("alt", "Madrid");
+        arrImg.push(imgMadrid);
+        
+    }
+
+    function aniadirImg(id){
+        divImg.style.width= arrImg[id].width+"px";
+        divImg.style.padding = "1px";
+        divImg.style.display="block";
+        divImg.appendChild(arrImg[id]);
+        var cerrar = document.createElement('a');
+        cerrar.href="#";
+        cerrar.innerHTML= "[x]Cerrar"
+        cerrar.addEventListener("click", function () {
+            divImg.innerHTML = '';
+            divImg.style.display="none";
+        });
+        cerrar.style.color = "white";
+        divImg.appendChild(cerrar);
+        
+    }
+</script>
+</body>
+</html>

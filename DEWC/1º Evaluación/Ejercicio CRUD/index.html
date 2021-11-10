@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <title>CRUD con Local Storage</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <h1 class="jumbotron">Ejemplo de CRUD usando Local Storage</h1>
+
+                <table id="grid"
+                    class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Trabajo</th>
+                            <th>Edad</th>
+                            <th style="width:80px;">
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <input id="name"
+                                    type="text"
+                                    class="form-control" />
+                            </th>
+                            <th>
+                                <input id="job"
+                                    type="text"
+                                    class="form-control" />
+                            </th>
+                            <th>
+                                <input id="age"
+                                    type="text"
+                                    class="form-control" />
+                            </th>
+                            <th>
+                                <button id="btn-add"
+                                    class="btn btn-default">Aceptar</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const name = document.getElementById('name')
+        const job = document.getElementById('job')
+        const age = document.getElementById('age')
+        const save = document.getElementById('btn-add')
+
+        save.addEventListener('click', () => {
+            if (!name.value || !job.value || !age.value) return alert('Rellan todos los campos')
+
+            let entry = {
+                name: name.value,
+                job: job.value,
+                age: age.value
+            }
+
+            let entries = getEntries()
+            entries.push(entry)
+            setEntries(entries)
+            drawEntries()
+            name.value = ""
+            job.value = ""
+            age.value = ""
+        })
+
+        const setEntries = (entries) => {
+            localStorage.setItem('entries', JSON.stringify(entries))
+        }
+
+        const getEntries = () => {
+            let result = localStorage.getItem('entries')
+            if (result) return JSON.parse(result)
+            return []
+        }
+
+        const drawEntries = () => {
+            console.log(getEntries())
+            document.getElementsByTagName('tbody')[0].innerHTML = ''
+            getEntries().forEach((e, idx) => {
+                document.getElementsByTagName('tbody')[0].innerHTML += `
+                <tr>
+                    <td>${e.name}</td>
+                    <td>${e.job}</td>
+                    <td>${e.age}</td>
+                    <td><button value="${idx}" class="btn btn-danger">Remove</button></td>
+                </tr>
+                `
+            })
+
+            document.querySelectorAll('.btn-danger').forEach((btn) => {
+                btn.addEventListener('click', e => {
+                    let entries = getEntries()
+
+                    entries.splice(btn.value, 1)
+                    setEntries(entries)
+                    drawEntries()
+                })
+            })
+        }
+
+
+
+        drawEntries()
+
+    </script>
+</body>
+
+</html>

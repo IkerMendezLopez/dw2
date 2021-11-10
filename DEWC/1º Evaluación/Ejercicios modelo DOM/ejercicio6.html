@@ -1,0 +1,85 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Ejercicio 16 - DOM b�sico y atributos XHTML</title>
+	<style>
+		body {
+			margin-top: 10vh;
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<table id="tabla_fecha">
+		<tr>
+			<td id="d1"></td>
+			<td id="d2"></td>
+			<td class="separador"></td>
+			<td id="m1"></td>
+			<td id="m2"></td>
+			<td class="separador"></td>
+			<td id="y1"></td>
+			<td id="y2"></td>
+			<td id="y3"></td>
+			<td id="y4"></td>
+		</tr>
+
+		<tr>
+			<td class="vacio"></td>
+			<td id="h1"></td>
+			<td id="h2"></td>
+			<td class="separador--hora"></td>
+			<td id="mi1"></td>
+			<td id="mi2"></td>
+			<td class="separador--hora"></td>
+			<td id="s1"></td>
+			<td id="s2"></td>
+		</tr>
+	</table>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+		integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		const rutasNums = []
+
+		for (let i = 0; i <= 9; i++) {
+			rutasNums.push(`images/${i}.jpg`)
+		}
+
+		let img = document.createElement('img')
+		img.src = 'images/barra.jpg'
+		document.querySelectorAll('.separador').forEach(e => e.appendChild(img.cloneNode()))
+
+		img.src = 'images/puntos.jpg'
+		document.querySelectorAll('.separador--hora').forEach(e => e.appendChild(img.cloneNode()))
+
+
+		const actualizarFechaHora = () => {
+			const tabla = document.querySelector('#tabla_fecha')
+			const casillas = tabla.querySelectorAll('td:not(.separador):not(.separador--hora):not(.vacio)')
+			// eslint-disable-next-line no-undef
+			const date = moment().format('DDMMYYYYhhmmss')
+			casillas.forEach((casilla, index) => {
+				let img = document.createElement('img')
+				let num =  parseInt(date[index])
+				img.src = rutasNums[num]
+				casilla.innerHTML = ''
+				casilla.appendChild(img)
+
+			})
+		}
+		actualizarFechaHora() 
+		setInterval(actualizarFechaHora, 1000)
+		
+	</script>
+</body>
+
+</html>

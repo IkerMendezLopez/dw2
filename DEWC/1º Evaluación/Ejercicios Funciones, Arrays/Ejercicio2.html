@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 2</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-8">
+				<h3>Introduce palabras</h3>
+				<input id="palabra"
+					class="form-control mb-3"
+					type="text">
+				<button id="add"
+					class="btn btn-primary">Añadir palabra</button>
+				<button id="end"
+					class="btn btn-secondary">Terminar</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		const palabras = []
+		const container = document.querySelector('.col-8')
+
+		document.getElementById('add').addEventListener('click', () => {
+			let input = document.getElementById('palabra')
+			if (input.value != '') {
+				palabras.push(input.value)
+			}
+			input.value = ''
+		})
+
+		document.getElementById('end').addEventListener('click', () => {
+			if (palabras.length > 0) {
+				container.innerHTML = '<h1>Resultados: </h1>'
+				container.innerHTML +=
+					`<p>La primera palabra introducida por el usuario ha sido <strong>${palabras[0]}</strong></p>`
+				container.innerHTML +=
+					`<p>La ultima palabra introducida por el usuario ha sido <strong>${palabras[palabras.length -1]}</strong></p>`
+				container.innerHTML +=
+					`<p>En total <strong>${palabras.length}</strong> palabras han sido introducidas</p>`
+				container.innerHTML += '<p class="fw-bold">Palabras introducidas ordenadas alfabeticamente: </p>'
+				container.innerHTML += '<ul>'
+				palabras.sort().forEach(e => {
+					container.innerHTML += `<li>${e}</li>`
+				})
+				container.innerHTML += '</ul>'
+			} else {
+				container.innerHTML += '<p class="text-danger">Debes introducir al menos una plabra</p>'
+			}
+		})
+	</script>
+</body>
+
+</html>

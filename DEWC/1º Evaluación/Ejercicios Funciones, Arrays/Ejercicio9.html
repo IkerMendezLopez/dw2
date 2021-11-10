@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 9</title>
+	<style>
+		table,
+		td,
+		tr {
+			border: 1px solid black;
+			border-collapse: separate;
+		}
+	</style>
+</head>
+
+<body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		// let userDate = prompt('Introduce una fecha (dd/mm/aaaa):')
+		let userDate = '15/08/2020'
+		let split = userDate.split('/')
+		split = split.reverse()
+		let correctDate = new Date(split.join('/'))
+		document.body.appendChild( document.createTextNode('fecha introducida: ' +correctDate.toLocaleDateString()))
+		document.body.appendChild(document.createTextNode('Ese mismo día en...'))
+
+		if (correctDate !== 'Invalid date') {
+			
+			let table = document.createElement('table')
+			let trAnios = document.createElement('tr')
+			let trDia = document.createElement('tr')
+
+			let t1 = document.createElement('td')
+			t1.appendChild(document.createTextNode('el año...'))
+			let t2 = document.createElement('td')
+			t2.appendChild(document.createTextNode('era un...'))
+			trAnios.appendChild(t1)
+			trDia.appendChild(t2)
+
+
+			let fechaPasada = new Date(correctDate.setFullYear(correctDate.getFullYear() - 1))
+			for (let i = 1; i <= 5; i++) {
+				fechaPasada = new Date(fechaPasada.setFullYear(fechaPasada.getFullYear() - 1))
+				let td = document.createElement('td')
+					
+				td.appendChild(document.createTextNode(fechaPasada.getFullYear()))
+				let td2 = document
+					.createElement('td')
+
+				td2.appendChild(document.createTextNode(fechaPasada.toLocaleDateString(
+					'es-ES', {
+						weekday: 'long'
+					}
+				)))
+				trAnios.appendChild(td)
+				trDia.appendChild(td2)
+			}
+			table.appendChild(trAnios)
+			table.appendChild(trDia)
+			document.body.appendChild(table)
+
+		} else {
+			alert('Fecha incorrecta')
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            width: 80%;
+            margin: 5% auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .container {
+            padding: 1rem;
+        }
+
+        .blue {
+            border: 1px solid blue;
+        }
+
+        .red {
+            border: 1px solid red;
+        }
+
+        .green {
+            border: 1px solid green;
+        }
+
+
+        .yellow {
+            border: 1px solid yellow;
+        }
+
+        h3 {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container blue">
+        <h3>Objeto screen</h3>
+    </div>
+
+
+    <div class="container red">
+        <h3>Objeto navigator</h3>
+    </div>
+
+
+    <div class="container green">
+        <h3>Objeto document</h3>
+    </div>
+
+    <div class="container yellow">
+        <h3>Objeto location</h3>
+    </div>
+
+    <script>
+        // objeto screen
+        document.querySelector(' .blue').innerHTML += `La resolución de la pantalla es ${screen.width}x${screen.height}`
+        // objeto navigator
+        const nav = document.querySelector('.red')
+        nav.innerHTML += `El nombre del navegador que usas es  <strong>${navigator.appName} </strong> <br>`
+        nav.innerHTML += `Usas el siguiente sistema operativo  <strong>${navigator.platform} </strong> <br>`
+        nav.innerHTML += `La version del navegador que usas es <strong>${navigator.appVersion}</strong>`
+        // objeto document
+        document.querySelector('.green').innerHTML += `La URL del documento es: <strong>${document.URL}</strong>`
+        // objeto location
+        document.querySelector('.yellow').innerHTML +=
+            `El protocolo usado para acceder a esta págian ha sido: <strong>${location.protocol}</strong>`
+        // Cambiar nombre de la barra de estado
+        window.document.title = 'Bienvenido a Javascript'
+        // Abrir nueva ventana
+
+        window.open('https://google.es', 'google',
+        	'width=600,height=400,top=50,left=150,toolbar=no,locaton=no,status=no,menubar=yes,resizable=no,scroll=no'
+        )
+    </script>
+</body>
+
+</html>

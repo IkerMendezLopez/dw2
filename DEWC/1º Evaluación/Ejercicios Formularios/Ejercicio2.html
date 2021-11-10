@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 2</title>
+</head>
+
+<body>
+	<div class="container W-50 mt-5">
+		<form>
+			<table class="table table-light">
+				<thead>
+					<tr>
+						<th>Procesador</th>
+						<th>Sistema Operativo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+
+							<div class="form-check">
+								<input type="radio"
+									name="procesador"
+									id="procesador1"
+									value="Intel i96"
+									checked>
+								<label class="form-check-label"
+									for="procesador1">
+									Intel i96
+								</label>
+							</div>
+							<div class="form-check">
+								<input type="radio"
+									name="procesador"
+									id="procesador2"
+									value="AMD Ryzen ThreadSucker">
+								<label class="form-check-label"
+									for="procesador2">
+									AMD Ryzen ThreadSucker
+								</label>
+							</div>
+							<div class="form-check">
+								<input type="radio"
+									name="procesador"
+									id="procesador3"
+									value="Inklon True Procesor x69">
+								<label class="form-check-label"
+									for="procesador3">
+									Inklon True Procesor x69
+								</label>
+							</div>
+
+
+						</td>
+						<td>
+							<div class="form-check">
+								<input class="form-check-input"
+									type="radio"
+									name="sistema"
+									id="sistema1"
+									value="Windows XP"
+									checked>
+								<label class="form-check-label"
+									for="sistema1">
+									Windows XP
+								</label>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input"
+									type="radio"
+									name="sistema"
+									id="sistema2"
+									value="Windows 11">
+								<label class="form-check-label"
+									for="sistema2">
+									Windows 11
+								</label>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input"
+									type="radio"
+									name="sistema"
+									id="sistema3"
+									value="Ubuntu Oni-Chan🐧">
+								<label class="form-check-label"
+									for="sistema3">
+									Ubuntu Oni-Chan🐧
+								</label>
+							</div>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" id="enviar" value="Enviar" class="btn btn-primary">
+			<input type="reset" value="Reiniciar" class="btn btn-secondary">
+		</form>
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		let btnSubmit = document.getElementById('enviar')
+		btnSubmit.addEventListener('click', () => {
+			let texto = ''
+			let procesadores = document.getElementsByName('procesador')
+			let sistemas = document.getElementsByName('sistema')
+			
+			procesadores.forEach(e => {
+				if(e.checked) texto += `Has seleccionado el procesador ${e.value} `
+			})
+			sistemas.forEach(e => {
+				if(e.checked) texto += `con sistema operativo ${e.value}.`
+			})
+			alert(texto)
+		})
+		</script>
+</body>
+
+</html>

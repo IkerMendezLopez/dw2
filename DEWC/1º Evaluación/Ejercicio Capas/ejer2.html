@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio Capas 1</title>
+	<style>
+		.d-none {
+			display: none;
+		}
+		.coche {
+			position: relative;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<button id="arrancar">Arrancar</button>
+		<button id="acelerar" class="d-none">Acelerar</button>
+		<button id="decelerar" class="d-none">Decelerar</button>
+	</div>
+
+	<img class="coche"
+		src="./assets/car.png"
+		alt="cocheritolere"
+		width="200px">
+
+	<script>
+
+		const arrancar = document.querySelector('#arrancar')
+		const acelerar = document.querySelector('#acelerar')
+		const decelerar = document.querySelector('#decelerar')
+		var estado = false
+		var velocidad = 0
+		var recorrido = 0
+		arrancar.addEventListener('click', () => {
+			if(!estado) {
+				acelerar.classList.remove('d-none')
+				decelerar.classList.remove('d-none')
+				arrancar.innerHTML = 'Parar'
+				velocidad = 0.1
+				setInterval(() => {
+					recorrido += velocidad
+					document.querySelector('.coche').style.left = recorrido + 'px'
+				}, 1)
+			}else {
+				acelerar.classList.add('d-none')
+				decelerar.classList.add('d-none')
+				velocidad = 0
+				arrancar.innerHTML = 'Arrancar'
+
+			}
+			estado = !estado
+
+		})
+
+		acelerar.addEventListener('click', () => {
+			velocidad += 0.1
+		})
+		
+		decelerar.addEventListener('click', () => {
+			velocidad -= 0.1
+		})
+
+	</script>
+</body>
+
+</html>

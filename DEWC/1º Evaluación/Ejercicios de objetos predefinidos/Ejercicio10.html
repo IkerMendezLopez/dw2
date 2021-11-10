@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio10</title>
+	<style>
+		* {
+			font-size: 16px;
+		}
+
+		.container h3 {
+			text-align: center;
+		}
+
+		table tr td {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<button onclick="abrirVentanas()">
+			Boton para abrir 5 ventanas
+		</button>
+
+	</div>
+
+
+	<script>
+		// eslint-disable-next-line no-unused-vars
+		function abrirVentanas() {
+			for (let i = 0; i < 5; i++) {
+				window.open('./Ejercicio10.1.html', 'No me voy a cerrar si pulsas el boton ' + i,
+					'width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no'
+				)
+			}
+
+		}
+	</script>
+</body>
+
+</html>

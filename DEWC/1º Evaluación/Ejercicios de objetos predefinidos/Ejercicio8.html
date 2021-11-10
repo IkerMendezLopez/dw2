@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+    <style>
+
+        * {
+            font-size: 16px;
+        }
+
+
+
+        .container h3 {
+            text-align: center;
+        }
+
+        table tr td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>MANEJANDO CADENAS</h3>
+    </div>
+
+
+    <script>
+        const container = document.querySelector('.container')
+const str = prompt('Introduce una palabra:')
+const strName = Object.keys({ str })[0]
+
+const l = str.length
+container.innerHTML += `La variable '${strName}' contiene el siguiente texto: <strong>${str}</strong> <br>`
+
+const table = document.createElement('table')
+
+const tr1 = table.insertRow()
+const tr2 = table.insertRow()
+tr1.insertCell().appendChild(document.createTextNode('Posición'))
+tr2.insertCell().appendChild(document.createTextNode(str))
+for (let j = 0; j < l; j++) {
+        	const td1 = tr1.insertCell()
+	td1.appendChild(document.createTextNode(j))
+	const td2 = tr2.insertCell()
+	td2.appendChild(document.createTextNode(str[j]))
+}
+
+        container.appendChild(table)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Ejercicio 1</title>
+</head>
+<body>
+
+	<!-- <div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+		<label class="form-check-label" for="flexCheckIndeterminate">
+		  Indeterminate checkbox
+		</label>
+	  </div> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script>
+	let form = document.createElement('form')
+
+	let valores = ['Naranja', 'Amarillo Auto', 'Color Peruguarro']
+
+
+	valores.forEach(e => {
+		let formGroup = document.createElement('div')
+		formGroup.setAttribute('class', 'form-check')
+		let check =  document.createElement('input')
+		check.setAttribute('type', 'checkbox')
+		check.setAttribute('class', 'form-check-input')
+		check.setAttribute('value', e)
+		let label = document.createElement('label')
+		label.setAttribute('class', 'form-check-label')
+		label.innerHTML = e
+		
+		formGroup.appendChild(check)
+		formGroup.appendChild(label)
+		form.appendChild(formGroup)
+
+	})
+
+	let btnSubmit = document.createElement('input')
+	btnSubmit.setAttribute('class', 'btn btn-primary')
+	btnSubmit.setAttribute('type', 'submit')
+
+	let btnReset = document.createElement('input')
+	btnReset.setAttribute('class', 'btn btn-secondary')
+	btnReset.setAttribute('type', 'reset')
+
+	form.appendChild(btnSubmit)
+	form.appendChild(btnReset)
+
+	document.body.appendChild(form)
+
+	btnSubmit.addEventListener('click', e => {
+		let checks = document.querySelectorAll('.form-check-input')
+		let valores = 'Has seleccionado las opciones: \n'
+		checks.forEach(e => {
+			valores += e.value + '\n'
+		})
+		alert(valores)
+	})
+</script>
+</body>
+</html>

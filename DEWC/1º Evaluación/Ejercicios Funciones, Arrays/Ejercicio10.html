@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 10</title>
+</head>
+
+<body>
+	<!-- 
+	 	Crear una página con un formulario donde se pida un texto y un botón “Tipo de letra” y que al
+		hacer clic sobre el llame a la función tipoLetras(), a la que se le pasara el texto como argumento
+		y determinara si el texto está formado sólo por mayúsculas, sólo por minúsculas o por una
+		mezcla de ambas. El res
+ -->
+
+ <div class="container">
+	<div class="row justify-content-center mt-5">
+		<div class="col-8">
+			<h3>Introduce un texto: </h3>
+			<input id="letras"
+				class="form-control mb-3"
+				type="text">
+			<button id="validar"
+				class="btn btn-primary">Tipo letra</button>
+		</div>
+	</div>
+</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		let letras = document.getElementById('letras')
+		let btn = document.getElementById('validar')
+
+		const tipoLetra = (letras) => {
+			let mayus = false
+			let minus = false
+
+			letras.split('').forEach(element => {
+				if(minus && mayus) return
+				if(element === element.toUpperCase()) mayus = true
+				else minus = true
+			})
+
+			if(minus && mayus) return 'El texto esta formado por mayusculas y minusculas'
+			else if(mayus) return 'El texto esta formado solamente por mayusculas'
+			else return 'El texto esta formado solamente por minisculas'
+		}
+		btn.addEventListener('click', () => {
+			let result = tipoLetra(letras.value)
+			let win = window.open('', 'Resultado', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=300')
+			win.document.body.innerHTML += `
+				El resultado de tu texto ha sido: <br>
+				<strong>${result}</strong><br>
+				<button onclick="window.close()">Cerrar Ventana</button>
+			`
+		})
+
+	</script>
+</body>
+
+</html>

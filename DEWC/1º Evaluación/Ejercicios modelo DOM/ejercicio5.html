@@ -1,0 +1,99 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Ejercicio 15 - DOM b�sico y atributos XHTML</title>
+	<style>
+		.calculadora {
+			margin: 10% auto;
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		input[type=button] {
+			height: 4rem;
+			text-align: center;
+		}
+
+		#pantalla {
+			height: 4rem;
+		}
+
+		.teclas {
+			display: grid;
+			margin-top: 1rem;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1rem;
+
+		}
+
+		#pantalla {
+			width: auto;
+			padding: 1rem;
+			font-size: 2rem;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="calculadora">
+		<input type="text" id="pantalla" disabled>
+		<div class="teclas">
+			<input type="button" value="1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+			<input type="button" value="C">
+			<input type="button" value="4">
+			<input type="button" value="5">
+			<input type="button" value="6">
+			<input type="button" value="+">
+			<input type="button" value="7">
+			<input type="button" value="8">
+			<input type="button" value="9">
+			<input type="button" value="-">
+			<input type="button" value="0">
+			<input type="button" value="/">
+			<input type="button" value="=">
+			<input type="button" value="*">
+		</div>
+
+
+	</div>
+
+
+	<script>
+		const buttons = document.querySelectorAll('input[type=button]')
+		let operacion = ''
+		const pantalla = document.getElementById('pantalla')
+		buttons.forEach(btn => {
+
+			btn.addEventListener('click', () => {
+				if(operacion == 'SYNTAX ERROR') operacion = ''
+				if (btn.value === 'C') {
+					operacion = ' '
+
+				} else if (btn.value == '=') {
+					try {
+						operacion = eval(operacion)
+						console.log(typeof operacion)
+						if(operacion == Infinity) operacion = 'SYNTAX ERROR'
+					} catch (error) {
+						operacion = 'SYNTAX ERROR'
+					}
+				} else {
+					operacion += btn.value
+				}
+
+				pantalla.value = operacion
+			})
+
+		})
+	</script>
+</body>
+
+</html>

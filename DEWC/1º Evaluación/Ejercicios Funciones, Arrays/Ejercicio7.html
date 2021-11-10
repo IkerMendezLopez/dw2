@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 7</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-8">
+				<h3>Verifica tu DNI: </h3>
+				<input id="dni"
+					class="form-control mb-3"
+					type="text">
+				<button id="validar"
+					class="btn btn-primary">Verificar</button>
+					<span id="msg">
+
+					</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		const letras = new Array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V',
+			'H',
+			'L',
+			'C', 'K', 'E', 'T')
+
+		const validarDNI = (dni) => {
+			let letra
+			if (dni.length == 9) {
+				dni = dni.split('')
+				letra = dni[dni.length - 1]
+				dni.pop()
+				dni.forEach(num => {
+					if (!parseInt(num)) return false
+				})
+				if (!letra.match(/[a-z]/i)) return false
+				let clave = parseInt(dni.join('')) % 23
+				return letras[clave] === letra
+			}
+
+		}
+
+		const inputDNI = document.getElementById('dni')
+		const btnValidar = document.getElementById('validar')
+		btnValidar.addEventListener('click', () => {
+			const cont = document.querySelector('#msg')
+			if(validarDNI(inputDNI.value)) {
+				cont.innerHTML = '<p class="text-success fw-bolder">DNI VALIDO</p>'
+			}else cont.innerHTML = '<p class="text-danger fw-bolder">DNI INVALIDO!</p>'	
+		})
+
+
+	</script>
+</body>
+
+</html>

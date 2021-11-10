@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 7</title>
+</head>
+
+<body>
+	<!-- <select name="provincias"
+		id="provincias">
+	</select> -->
+	<!-- <select name="municipios"
+		id="municipios"></select> -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		var provincias = new Array('Araba', 'Bizkaia', 'Gipuzkoa', 'Nafarroa', 'Lapurdi', 'Zuberoa', 'Nafarroa Beherea')
+
+		var municipios_1 = new Array('Seleccione Municipio', 'Vitoria-Gasteiz', 'Amurrio', 'El Ciego', 'La Guardia')
+		var municipios_2 = new Array('Seleccione Municipio', 'Bilbao', 'Barakaldo', 'Durango', 'Elorrio', 'Muzkiz')
+		var municipios_3 = new Array('Seleccione Municipio', 'Donostia-San Sebastián', 'Arrasate-Mondragón', 'Eibar')
+		var municipios_4 = new Array('Seleccione Municipio', 'Iruña', 'Burlada', 'Estella-Lizarra', 'Tafalla')
+		var municipios_5 = new Array('Seleccione Municipio', 'Baiona', 'Bastida', 'Hendaya', 'Miarritze')
+		var municipios_6 = new Array('Seleccione Municipio', 'Maule', 'Barkoxe', 'Sohüta')
+		var municipios_7 = new Array('Seleccione Municipio', 'Baigorri', 'Garazi', 'Oztibarre')
+
+		var todosMunicipios = [
+			[],
+			municipios_1,
+			municipios_2,
+			municipios_3,
+			municipios_4,
+			municipios_5,
+			municipios_6,
+			municipios_7,
+		]
+
+		const selectProvincias = document.createElement('select')
+		const selectMunicipios = document.createElement('select')
+
+		provincias.forEach(prov =>{
+			let option = document.createElement('option')
+			option.appendChild(document.createTextNode(prov))
+			selectProvincias.appendChild(option)
+			document.body.appendChild(selectProvincias)
+		})
+
+		const loadSelect = () => {
+			let index = selectProvincias.selectedIndex + 1
+			selectMunicipios.innerHTML = ''
+			document.body.appendChild(selectMunicipios)
+			todosMunicipios[index].forEach(e => {
+				let option = document.createElement('option')
+				option.appendChild(document.createTextNode(e))
+				selectMunicipios.appendChild(option)
+			})
+		}
+		loadSelect()
+		selectProvincias.addEventListener('change', loadSelect)
+		
+		selectMunicipios.addEventListener('change', () => {
+			let prov = provincias[selectProvincias.selectedIndex]
+			let municipio = todosMunicipios[selectProvincias.selectedIndex+1][selectMunicipios.selectedIndex]
+			let texto = document.getElementsByTagName('p')
+			console.log('0jdfa')
+			if(municipio != 'Seleccione Municipio'){
+				if(!texto[0]){
+					texto = document.createElement('p')
+					texto.appendChild(document.createTextNode(`Has seleccionado ${municipio} en ${prov}`))
+					document.body.appendChild(texto)
+				}else {
+					texto[0].innerHTML = ''
+					texto[0].appendChild(document.createTextNode(`Has seleccionado ${municipio} en ${prov}`))
+				}
+			}else {
+				texto[0].innerHTML = ''
+			}
+			
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 6</title>
+</head>
+
+<body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+
+
+		function producto_alimenticio(codigo, nombre, precio) {
+			this.codigo = codigo
+			this.nombre = nombre
+			this.precio = precio
+			this.imprimeDatos =   () => {
+				return `
+						Codigo: ${this.codigo} <br>
+						Nombre: ${this.nombre} <br>
+						Precio: ${this.precio} <br>
+						`
+			}
+		}
+
+		const productos = []
+
+		let p1 = new producto_alimenticio('001', 'Coca', '1,2')
+		productos.push(p1)
+		let p2 = new producto_alimenticio('002', 'Cola', '1,1')
+		productos.push(p2)
+		let p3 = new producto_alimenticio('003', 'Pepsi', '1,3')
+		productos.push(p3)
+		document.write('<hr>')
+		productos.forEach(prod => {
+			document.write(prod.imprimeDatos())
+			document.write('<hr>')
+		})
+
+
+	</script>
+</body>
+
+</html>

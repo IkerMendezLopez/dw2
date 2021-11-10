@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio Capas 3</title>
+	<style>
+
+
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li><a href="#"
+				class="lugar">Ver imagenes en Ancares</a></li>
+		<li><a href="#"
+				class="lugar">Ver imagenes en Basilea</a></li>
+		<li><a href="#"
+				class="lugar">Ver imagenes en Cabrita</a></li>
+		<li><a href="#"
+				class="lugar">Ver imagenes en Madrid</a></li>
+	</ul>
+
+	<div class="capa">
+		<img class="imagen"
+			src=""
+			alt="">
+		<div><button id="close">[x]cerrar</button></div>
+	</div>
+
+	<script>
+		let imagen = document.querySelector('.imagen')
+		let capa = document.querySelector('.capa')
+		let imagenes = ['./assets/ancares.jpg', './assets/basel.jpg', './assets/cabra.jpg', './assets/madridbanco.jpg']
+		capa.style.display = 'none'
+		capa.style.position = 'absolute'
+
+		let enlaces = document.querySelectorAll('.lugar')
+		enlaces.forEach((e, i) => {
+			e.addEventListener('click', () => {
+				imagen.src = imagenes[i]
+				capa.style.display = 'block'
+				capa.style.top  = window.innerHeight / 2 + 'px'
+				capa.style.left  = window.innerWidth / 2 + 'px'
+			})
+		})
+	</script>
+</body>
+
+</html>

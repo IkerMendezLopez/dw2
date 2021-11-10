@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio7</title>
+</head>
+
+<body>
+	<main>
+		<h1>Sumatorias menores que 1000</h1>
+	</main>
+	<script>
+		let n = 1
+		const main = document.querySelector('main')
+		let newLineCounter = 0
+
+		const sumatorio = (n) => n * (n + 1) / 2
+
+		while (n < 100) {
+			const s = sumatorio(n)
+			if (s > 1000) break
+			if (s % 2 != 0) {
+				main.innerHTML += `${s}, `
+				newLineCounter++
+
+				if (newLineCounter == 4) {
+					main.innerHTML += '<br>'
+					newLineCounter = 0
+				}
+			}
+
+			n++
+		}
+	</script>
+</body>
+
+</html>

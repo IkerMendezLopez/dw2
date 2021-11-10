@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio Capas 1</title>
+	<style>
+
+		body{
+			display: flex;
+			justify-content: center;
+			height: 100vh;
+			align-items: center;
+		}
+		div {
+			height: 300px;
+			width: 300px;
+		}
+
+		.rojo {
+			background: red;
+		}
+
+		.azul {
+			background: blue;
+		}
+
+		.d-none {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="rojo d-none">
+
+	</div>
+	<div class="azul">
+
+	</div>
+	<script>
+		let rojo = document.querySelector('.rojo')
+		let azul = document.querySelector('.azul')
+
+		azul.addEventListener('mouseover', () => {
+			rojo.classList.remove('d-none')
+			azul.addEventListener('mouseout', () => rojo.classList.add('d-none'))
+	
+		})
+		
+
+	</script>
+</body>
+</html>

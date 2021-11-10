@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Ejercicio 4</title>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script>
+	const nums = []
+	const sum = (n1, n2) => n1 + n2
+	do {
+		let n = parseInt(prompt('Introduce un número: '))
+		if(n){
+			nums.push(parseInt(n))
+		}else {
+			alert('No has introducido un número vuelve a intentarlo!')
+		}
+	} while (nums.length < 2)
+	let suma = sum(nums[0], nums[1])
+	document.write('<p>' + nums[0] + ' + ' + nums[1] + ' = ' + suma + '</p>')
+
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 4</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row p-5">
+			<form class="col-6">
+				<div class="form-group">
+					<label for="nombre"
+						class="col-sm-2 col-form-label">Nombre</label>
+					<div class="col-sm-12">
+						<input type="text"
+							class="form-control"
+							id="nombre">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-auto">
+						<label for="dni"
+							class="col-sm-2 col-form-label">DNI</label>
+						<div class="col-sm-10">
+							<input type="number"
+								class="form-control"
+								id="dni">
+						</div>
+					</div>
+	
+					<div class="col-auto">
+						<label for="letra"
+							class="col-sm-2 col-form-label">Letra</label>
+						<div class="col-auto">
+							<input type="text"
+								size="1"
+								class="form-control"
+								id="letra">
+						</div>
+					</div>
+				</div>
+	
+				<div class="form-group">
+					<label for="opinion"
+						class="form-label">Opinion</label>
+					<textarea class="form-control"
+						id="opinion"
+						rows="3"></textarea>
+				</div>
+	
+				<div class="form-group">
+					<label for="maxChar"
+						class="form-label">Numero maximo de caracteres</label>
+					<input type="text"
+						class="form-control"
+						id="maxChar"
+						value="50">
+				</div>
+	
+				<label>Sexo:</label>
+	
+				<div class="form-check">
+					<input class="form-check-input"
+						type="radio"
+						value="hombre"
+						name="sexo"
+						id="hombre">
+					<label class="form-check-label"
+						for="hombre">
+						Hombre
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<input class="form-check-input"
+						type="radio"
+						value="mujer"
+						name="sexo"
+						id="mujer">
+					<label class="form-check-label"
+						for="mujer">
+						Mujer
+					</label>
+				</div>
+	
+				<label>Sueldo Anual:</label>
+	
+				<div class="form-check">
+					<input class="form-check-input"
+						type="radio"
+						value="menos de 10000€"
+						name="sueldo"
+						id="minimo">
+					<label class="form-check-label"
+						for="minimo">
+						menos de 10000€
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<input class="form-check-input"
+						type="radio"
+						value="de 10000€ a 20000€"
+						name="sueldo"
+						id="medio">
+					<label class="form-check-label"
+						for="medio">
+						de 10000€ a 20000€
+					</label>
+				</div>
+	
+				<div class="form-check">
+					<input class="form-check-input"
+						type="radio"
+						value="más de 20000"
+						name="sueldo"
+						id="alto">
+					<label class="form-check-label"
+						for="alto">
+						más de 20000
+					</label>
+				</div>
+	
+				<div class="mb-3">
+					<label for="archivo" class="form-label">Fichero:</label>
+					<input class="form-control" type="file" id="archivo">
+				  </div>
+
+				<div class="mb-3">
+					<label class="form-label">Provincia:</label>
+					<select class="form-select" id="provincia">
+						<option value="0">Elegir Provincia</option>
+						<option value="1">Alava</option>
+						<option value="2">Vizcaya</option>
+						<option value="3">Guipuzcoa</option>
+					  </select>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Hobies:</label>
+					<select class="form-select" id="hobbys"multiple size="3">
+						<option value="Fumar">Fumar</option>
+						<option value="Pincharse">Pincharse</option>
+						<option value="Escupir">Escupir</option>
+					  </select>
+				</div>
+	
+				<button  id="enviar"
+					class="btn btn-primary">Enviar</button>
+				<button type="reset" id="limpiar"
+					class="btn btn-secondary">
+						Limpiar
+				</button>
+			</form>
+			<div id="displayDatos" class="d-none col-6">
+
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script src="ejercicio4.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 3</title>
+</head>
+
+<body>
+	<div class="container W-50 mt-5">
+		<form>
+			<table class="table table-light">
+				<thead>
+					<tr>
+						<th>Procesador</th>
+						<th>Sistema Operativo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<select id="procesador"
+								class="form-select"
+								aria-label="Default select example">
+								<option value="Intel i96">Intel i96</option>
+								<option value="AMD Ryzen ThreadSucker">AMD Ryzen ThreadSucker</option>
+								<option selected
+									value="Inklon True Procesor x69">Inklon True Procesor x69</option>
+							</select>
+						</td>
+						<td>
+							<select id="sistema"
+								class="form-select"
+								aria-label="Default select example"
+								size="3"
+								multiple>
+								<option value="Windows XP">Windows XP</option>
+								<option selected
+									value="Windows 11">Windows 11</option>
+								<option value="Ubuntu Oni-Chan🐧">Ubuntu Oni-Chan🐧</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit"
+				id="enviar"
+				value="Enviar"
+				class="btn btn-primary">
+			<input type="reset"
+				value="Reiniciar"
+				class="btn btn-secondary">
+		</form>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+		<script>
+			let btnSubmit = document.getElementById('enviar')
+			btnSubmit.addEventListener('click', () => {
+				let texto = ''
+				let procesador = document.getElementById('procesador')
+				let sistema = document.querySelectorAll('#sistema option:checked')
+
+
+				procesador = procesador.options[procesador.selectedIndex].value
+
+				let sistemas = ''
+				sistema.forEach(e => sistemas += '\n- ' + e.value )
+				texto = `Has seleccionado el procesador ${procesador} con los siguientes sistemas: ${sistemas}`
+				alert(texto)
+				
+			})
+		</script>
+</body>
+
+</html>

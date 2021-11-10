@@ -10,22 +10,32 @@
         img {
             position: relative;
         }
+        #botonAcelerar {
+            display: none;
+        }
+        #botonDecelerar {
+            display: none;
+        }
     </style>
     <script>
-        var velocidad;
+        var velocidad =1;
         var distancia;
         window.onload = function () {
             const botonArrancar = document.getElementById("botonArrancar");
+            const botonAcelerar = document.getElementById("botonAcelerar");
+            const botonDecelerar = document.getElementById("botonDecelerar");
             const coche = document.getElementById("coche");
             distancia = 0;
         }
 
         function arrancar() {
-            velocidad = 1;
+            velocidad=1;
             setInterval(function () {
                 coche.style.left = distancia + "px";
                 distancia += velocidad;
             }, 100);
+            botonAcelerar.style.display = "inline-block";
+            botonDecelerar.style.display = "inline-block";
             botonArrancar.value = "parar";
             botonArrancar.setAttribute("onclick", "parar()");
         }
@@ -34,9 +44,21 @@
             console.log("parar");
             velocidad = 0;
             distancia = 0;
+            botonAcelerar.style.display = "none";
+            botonDecelerar.style.display = "none";
             botonArrancar.value = "arrancar";
             botonArrancar.setAttribute("onclick", "arrancar()");
         }
+
+        function acelerar() {
+            velocidad+=1;
+        }
+        function decelerar() {
+            if(velocidad>1){
+                velocidad-=1;
+            }
+        }
+
     </script>
 </head>
 
@@ -45,6 +67,14 @@
         value="arrancar"
         id="botonArrancar"
         onclick="arrancar()">
+    <input type="button"
+        value="acelerar"
+        id="botonAcelerar"
+        onclick="acelerar()">
+    <input type="button"
+        value="decelerar"
+        id="botonDecelerar"
+        onclick="decelerar()">
     <div>
         <img src="./recursos_capas/car.png"
             alt="car"

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+        * {
+            font-size: 16px;
+        }
+
+        .container h3 {
+            text-align: center;
+        }
+
+        table tr td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3 id="texto">Bienvenido </h3>
+
+        <button type="button" 
+        onclick="window.open('', '_self', ''); window.close();">Empezar a navegar</button>
+
+    </div>
+
+
+    <script>
+       document.getElementById('texto').innerHTML += window.nombre
+    </script>
+</body>
+
+</html>

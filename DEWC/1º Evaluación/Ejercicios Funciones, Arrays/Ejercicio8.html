@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 8</title>
+</head>
+
+<body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		let contadorArrays = 1
+		const mostrarArray = (arr) => {
+			document.write('Array'+ contadorArrays + ': ')
+			arr.forEach((e, index) => {
+				
+				if (typeof e === 'number') document.write(e)
+				else if (typeof e === 'string') document.write('"' + e + '"')
+				if(index !== arr.length-1) document.write(', ')
+			})
+			document.write('<br>')
+			contadorArrays++
+		}
+
+		let a = [1,'2', 29, 'Cuatro']
+		let b = [2,'32', 72, 'Cinco']
+		let c = [3,'27', 12, 'Seis']
+		let d = [4,'20', 22, 'CR7']
+		mostrarArray(a)
+		mostrarArray(b)
+		mostrarArray(c)
+		mostrarArray(d)
+	</script>
+</body>
+
+</html>
