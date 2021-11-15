@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+*{
+    font-family: 'Roboto';
+    
+    color: white;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Bebas Neue';
+}
+body{
+    background: url(../img/Logo.webp) no-repeat fixed center;
+	background-color: dimgrey;
+}
+
+.title{
+    text-align: center;
+    letter-spacing: 0.25em;
+	word-spacing: 1em;
+	white-space: nowrap;
+}
+h2 { 
+    display:inline; 
+}
+header video{
+    width: 100%;
+}
+
+nav{
+    background-color: white;
+    display: flex;
+	flex-flow: row nowrap;
+    width: 100%;
+	border-radius: 1rem;
+	gap: 1rem;
+    justify-content: space-between;
+}
+nav a{
+    padding: 1rem;
+    background-color: transparent;
+    color:black;
+	text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+main{
+    text-align: justify;
+    color:white;
+}
+section{
+    display:block;
+}
+.bici{
+    display: none;
+}
+.marte{
+    display: none;
+}
+footer{
+    display: flex;
+	flex-flow: column-reverse wrap;
+	align-items: center;
+	border-top: 3px solid white;
+	padding: 1rem;
+	margin-top: 1em;
+}
+footer img {
+	width: 10%;
+}
+footer .biciFooter{
+    display: none;
+}
+.logo{
+    display: none;
+}
+
+/* MEDIANAS */
+@media only screen and (min-width: 550px) {
+    header video{
+        width: 100%;
+    }
+    nav{
+        background-color: transparent;
+    }
+    nav a{
+        font-weight: bold;
+		text-transform: uppercase;
+		background-color: seagreen;
+		text-decoration: none;
+		border-radius: 2em;
+		padding: 1em;
+		color: white;
+    }
+    body {
+		background-image: none;
+	}
+    main {
+		column-count: 2;
+		column-rule: 3px solid white;
+	}
+    footer {
+        margin: 0;
+		flex-flow: row nowrap;
+		align-items: flex-end;
+		padding: 1rem;
+		justify-content: space-between;
+	}
+}
+
+/* GRANDES */
+@media only screen and (min-width: 960px){
+    body {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-areas:
+			"cabecera cabecera cabecera cabecera"
+			"logo txtCentral txtCentral aside"
+			"pie pie pie pie";
+		column-gap: 1em;
+		margin: 0 2em;
+	}
+    header{
+        grid-area: cabecera;
+        display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+    }
+    header video{
+        width: 80%;
+    }
+
+    nav{
+        background-color: white;
+        position: absolute;
+		width: 800px;
+        flex-flow: row nowrap;
+        border-radius: 1rem;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    nav a{
+        color:black;
+        background-color: transparent;
+        text-decoration: overline;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    body {
+		background: url(../img/fondohojas.png) repeat-x bottom;
+		background-color: dimgrey;
+	}
+    .logo{
+		grid-area: logo;
+        display: flex;
+		align-items: center;
+		justify-content: center;
+    }
+
+    main{
+        grid-area: txtCentral;
+        max-width: 100%;
+		columns: 3;
+        text-align: left;
+    }
+    section{
+        display:none;
+    }
+    .bici{
+        display: block;
+    }
+    .marte{
+        color: white;
+        grid-area:aside;
+        display: block;
+        text-align: center;
+        width: 300px;
+    }
+    .marte video{
+        width: 100%;
+    }
+    
+    footer{
+        grid-area: pie;
+        border-top: none;
+		display: flex;
+		justify-content: flex-end;
+    }
+    
+    footer span{
+        display:none;
+    }
+    footer img{
+        display:none;
+    }
+    .biciFooter{
+        display:inline-block;
+    }
+    
+}
