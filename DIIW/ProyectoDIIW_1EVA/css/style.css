@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cormorant+Garamond:wght@300&family=Righteous&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #474747;
+}
+
+/* .title {
+    font-family: "Alfa Slab One";
+    text-align: center;
+} */
+
+h2 {
+    font-family: "Righteous";
+    letter-spacing: 0.10rem;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+    width: 100%,
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+nav ul{
+    display: flex;
+}
+
+nav li {
+    display: inline-block;
+    width: 25%;
+    padding: 10px 10px;
+    background-color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+    text-align: center;
+    color: #fff;
+}
+
+nav li:hover {
+    background-color: #2a2d2e;
+    color: #fff;
+}
+
+.infoExtra {
+    display: none;
+}
+
+.sinopsis{
+    display: none;
+    font-family: "Cormorant Garamond";
+    /* background-color: #fff; 
+    filter:alpha(opacity=70);
+    -moz-opacity:.70;opacity:.70; */
+}
+.stardew{
+    background-image: url('../img/stardewValleyFondo.jpg');
+}
+.cup{
+    background-image: url('../img/cupHeadFondo.jpg');
+}
+.hades{
+    background-image: url('../img/hadesFondo.jpg');
+}
+.under{
+    background-image: url('../img/undertaleFondo.jpg');
+}
+
+.juego {
+    margin: 5% 5% 5% -5%;
+    padding: 2em;
+    background-color: #566573;
+    border: 1px solid gold;
+    color:#fff;
+    border-radius: 2em;
+    background-position: center center;
+    background-size: cover;
+}
+.juego h2{
+    -webkit-text-stroke: .1px black;
+    color: #fff;
+}
+section:hover> *{
+    display: block;
+}
+section:hover{
+    background-image: none;
+    border: none;
+}
+section:hover>h2{
+    display:none;
+}
