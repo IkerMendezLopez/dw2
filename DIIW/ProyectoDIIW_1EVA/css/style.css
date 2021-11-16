@@ -8,47 +8,9 @@
 body {
     background-color: #474747;
 }
-
-/* .title {
-    font-family: "Alfa Slab One";
-    text-align: center;
-} */
-
 h2 {
     font-family: "Righteous";
-    letter-spacing: 0.10rem;
-}
-
-nav {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 0;
-    width: 100%,
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 14px;
-}
-nav ul{
-    display: flex;
-}
-
-nav li {
-    display: inline-block;
-    width: 25%;
-    padding: 10px 10px;
-    background-color: #1E1E1E;
-    border: 1px solid #1E1E1E;
-    text-align: center;
-    color: #fff;
-}
-
-nav li:hover {
-    background-color: #2a2d2e;
-    color: #fff;
+    letter-spacing: .1rem;
 }
 
 .infoExtra {
@@ -58,10 +20,64 @@ nav li:hover {
 .sinopsis{
     display: none;
     font-family: "Cormorant Garamond";
-    /* background-color: #fff; 
-    filter:alpha(opacity=70);
-    -moz-opacity:.70;opacity:.70; */
 }
+
+.juego {
+    margin: 5% 5% 5% 0;
+    padding: 2em;
+    color:#fff;
+    border-radius: 0em 2em 2em 0em;
+    border: 1px solid black;
+    background-position: center center;
+    background-size: cover;
+}
+.juego h2{
+    -webkit-text-stroke: .1px black;
+}
+.sinopsis >p> a:visited{
+    color: yellowgreen;
+}
+
+.sinopsis >p> a{
+    color: yellow;
+}
+/* Menu */
+nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: .9rem;    
+}
+nav ul{
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    width: 25%;
+    padding: 10px 10px;
+    background-color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+nav li:hover {
+    background-color: #2a2d2e;
+    color: #fff;
+}
+
+
+
+/* Imagenes */
 .stardew{
     background-image: url('../img/stardewValleyFondo.jpg');
 }
@@ -74,28 +90,36 @@ nav li:hover {
 .under{
     background-image: url('../img/undertaleFondo.jpg');
 }
+.hollow{
+    background-image: url('../img/hollowKnightFondo.jpg');
+}
 
-.juego {
-    margin: 5% 5% 5% -5%;
-    padding: 2em;
-    background-color: #566573;
-    border: 1px solid gold;
-    color:#fff;
-    border-radius: 2em;
-    background-position: center center;
-    background-size: cover;
-}
-.juego h2{
-    -webkit-text-stroke: .1px black;
-    color: #fff;
-}
-section:hover> *{
+
+/* Hover Section */
+
+section:hover> .sinopsis{
     display: block;
 }
+
 section:hover{
     background-image: none;
     border: none;
+    border-radius: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(192,192,192,0.5);
+    margin-left: 5%;
+    text-align: justify;
+    border: 1px solid black;
+    border-left: 5px solid black;
+    border-radius: 0em 1em 1em 0em;
 }
 section:hover>h2{
-    display:none;
+    font-size: 200%;
+    text-align: center;
+    -webkit-text-stroke: 0px;
+    color: black;
+    margin-bottom: 1rem;
 }
