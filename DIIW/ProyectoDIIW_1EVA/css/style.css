@@ -98,6 +98,7 @@ nav a {
     color: inherit;
     font-size: 1rem;
     height: 100%;
+    padding: .5rem 0;
 }
 
 nav li {
@@ -198,7 +199,7 @@ textarea{
 }
 .galeria img{
     display: block;
-    width:100%;
+    width: 100%;
     height: auto;
     border-radius: .2rem;
     border: 2px solid #ddd;
@@ -211,7 +212,8 @@ textarea{
     padding: .5rem 1rem;
     text-decoration: unset;
     border-radius: .2rem;
-    color: black;
+    color: #cccccc;
+    border: 1px solid black;
 }
 .contenedorboton{
     text-align: center;
