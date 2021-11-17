@@ -101,7 +101,6 @@ nav a {
 }
 
 nav li {
-    display: flex;
     flex: 1 1 30%;
     background-color: #1E1E1E;
     border: 1px solid #1E1E1E;
