@@ -91,9 +91,44 @@
             </article>
         </section>
     </main>
+    <div class="cookies">
+        <p>Aviso de privacidad</p>
+            <p>Con su consentimiento, nosotros y nuestros socios usamos cookies o tecnologías similares para almacenar, acceder y procesar
+            datos personales como su visita en este sitio web. </p>
+            <p>Puede leer más sobre el uso de cookies en nuestra <a href="#">política de privacidad</a>.</p>
+        </p><br>
+        <div class="cookies-butons">
+            <a href="#" id="aceptar" class="botonlink">Aceptar</a>
+            <a href="#" id="rechazar" class="botonlink">Rechazar</a>
+        </div>
+    </div>
     <footer>
         <span> Indie Games © 2021 </span>
         <img src="img/logo.ico" alt="logo" class="logo">
     </footer>
+    <script>
+        const aceptar = document.querySelector('#aceptar')
+        const rechazar = document.querySelector('#rechazar')
+  
+        function guardarCookie() {
+            document.cookie = "OK";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+        function denegarCookie() {
+            document.cookie = "NO";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+
+        aceptar.addEventListener('click', guardarCookie);
+        rechazar.addEventListener('click', denegarCookie);
+        if(document.cookie=='OK'){
+            const cookies = document.querySelector('.cookies')
+            cookies.style.display = "none";
+        }
+    </script>
 </body>
 </html>
