@@ -7,26 +7,21 @@
     box-sizing: border-box;
 }
 
-
-
 .title {
     text-align: center;
     font-family: "Alfa Slab One";
     letter-spacing: .2rem;
-    margin-top: 3rem;
-}
-
-main {
-    max-width: 1400px;
+    margin-top: 1rem;
 }
 
 body {
     background-color: #474747;
     position: relative;
-    height: 100%;
     padding-bottom: 150px;
 }
-
+main{
+    min-height: 80vh;
+}
 h2 {
     font-family: "Righteous";
     letter-spacing: .1rem;
@@ -49,11 +44,13 @@ p {
 .sinopsis {
     display: none;
 }
-.imgjuja{
-    display:none;
+
+.imgjuja {
+    display: none;
 }
-.apedra{
-    display:none;
+
+.apedra {
+    display: none;
 }
 
 .contenedor {
@@ -216,8 +213,15 @@ textarea {
     padding: 5px;
 }
 
-.formulario {
+.formulario > form{
+    margin: 0 auto;
     align-items: center;
+}
+.formulario{
+    margin-bottom: 4rem;
+}
+.sobre{
+    display: none;
 }
 
 /* Galeria Imagenes */
@@ -261,7 +265,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     align-items: center;
     padding: 1rem;
     margin-top: 1rem;
@@ -340,6 +344,28 @@ footer {
         height: 140px;
     }
 
+    /* Contacto */
+    .sobreanimacion{
+        align-items: left;
+    }
+    .sobre{
+        display: flex;
+        width: 100px;
+        height: auto;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: left;
+        animation-name: sobreanimado;
+    }
+    @keyframes sobreanimado {
+        from {
+            margin-left: 0%;
+        }
+        to {
+            margin-left: 80%;
+        }
+    }
+
 }
 
 /* Pantallas grandes */
@@ -388,7 +414,11 @@ footer {
     section:hover {
         border-radius: 0;
         border-right: 5px solid black;
+        margin-left: 1rem;
     }
+
+    
+
 
     /* Animacion */
     .animacion {
@@ -457,4 +487,40 @@ footer {
             opacity: 0%;
         }
     }
+}
+@media only screen and (min-width: 1200px) {
+    .dato {
+        height: 40px;
+        width: 400px;
+        border: 2px solid black;
+        border-radius: .4em;
+        padding-left: 1rem;
+        font-size: 100%;
+    }
+    
+    textarea {
+        height: 220px;
+        width: 400px;
+        border: 2px solid black;
+        border-radius: .4em;
+        padding: 1rem 0 0 1rem;
+        font-size: 130%;
+    }
+    
+    .boton {
+        display: inline-block;
+        width: 49%;
+        padding: 5px;
+        border: 2px solid black;
+    }
+    
+    .columnas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .sobre{
+        width: 200px;
+    }
+    
 }
