@@ -21,17 +21,25 @@
         <h1 class="title">Contacto</h1>
     </header>
     <main>
-        <div class="contenedor">
+        <div class="contenedor formulario">
             <form>
-                <input type="text" class="dato" name="apellido1" placeholder="Nombre*"><br>
-                <input type="text" class="dato" name="apellido1" placeholder="Primer Apellido*"><br>
-                <input type="text" class="dato" name="apellido2" placeholder="Segundo Apellido*"><br>
-                <input type="email" class="dato" name="email" placeholder="E-Mail*"><br>
-                <input type="number" class="dato" maxlength="9" name="telefono" placeholder="Telefono"><br>
-                <input type="text" class="dato" name="pais" placeholder="Pais*"><br>
-                <textarea maxlength="300" id="textArea" placeholder="Observaciones"></textarea><br>
-                <input type="button" class="boton" value="Enviar">
-                <input type="reset" class="boton" value="Limpiar">
+                <div class="columnas">
+                    <div>
+                        <input type="text" class="dato" name="apellido1" placeholder="Nombre*"><br>
+                        <input type="text" class="dato" name="apellido1" placeholder="Primer Apellido*"><br>
+                        <input type="text" class="dato" name="apellido2" placeholder="Segundo Apellido*"><br>
+                        <input type="email" class="dato" name="email" placeholder="E-Mail*"><br>
+                        <input type="number" class="dato" maxlength="9" name="telefono" placeholder="Telefono"><br>
+                    </div>
+                    <div>
+                        <input type="text" class="dato" name="pais" placeholder="Pais*"><br>
+                        <textarea maxlength="300" id="textArea" placeholder="Observaciones"></textarea><br>
+                    </div>
+                </div>
+                <div>
+                    <input type="button" class="boton" value="Enviar">
+                    <input type="reset" class="boton" value="Limpiar">
+                </div>
             </form>
         </div>
     </main>

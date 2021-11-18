@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cormorant+Garamond:wght@500&family=Righteous&display=swap');
 
+/* Principal */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 .title {
     text-align: center;
@@ -15,12 +18,13 @@
 
 main {
     max-width: 1400px;
-    margin-bottom: 150px;
 }
 
 body {
     background-color: #474747;
     position: relative;
+    height: 100%;
+    padding-bottom: 150px;
 }
 
 h2 {
@@ -44,6 +48,12 @@ p {
 
 .sinopsis {
     display: none;
+}
+.imgjuja{
+    display:none;
+}
+.apedra{
+    display:none;
 }
 
 .contenedor {
@@ -202,8 +212,12 @@ textarea {
 
 .boton {
     display: inline-block;
-    width: 45%;
+    width: 49%;
     padding: 5px;
+}
+
+.formulario {
+    align-items: center;
 }
 
 /* Galeria Imagenes */
@@ -239,23 +253,204 @@ textarea {
     text-align: center;
 }
 
-.logo{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-footer{
+/* footer */
+footer {
     display: flex;
     justify-content: space-between;
     background-color: #2222;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 100px;
     align-items: center;
     padding: 1rem;
-    margin-top:1rem;
-    color:#cccccc;
-    left:0;
+    margin-top: 1rem;
+    color: #cccccc;
+    left: 0;
     right: 0;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Quienes somos */
+.imagen {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: .2rem;
+    border: 2px solid #ddd;
+    padding: 3px;
+    background-color: whitesmoke;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    margin: .5rem 0;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+    margin: 0 .5rem;
+}
+
+/* Pantallas medianas */
+@media only screen and (min-width: 625px) {
+    body {
+        background-color: #474747;
+
+    }
+
+    .juego {
+        height: 30vh;
+    }
+
+    h2 {
+        font-size: 300%;
+    }
+
+    section:hover>h2 {
+        font-size: 200%;
+        text-align: center;
+        -webkit-text-stroke: 0px;
+        color: black;
+        margin-bottom: 1rem;
+    }
+
+    section:hover {
+        height: auto;
+    }
+
+    .columnas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .columnas>div {
+        width: 50%;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+}
+
+/* Pantallas grandes */
+@media only screen and (min-width: 1000px) {
+    body {
+        background-color: #474747;
+
+    }
+
+    .grande {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "stardew cup"
+            "hades hollow"
+            "tale tale";
+    }
+
+    .juego {
+        margin: 0;
+        margin: 1rem;
+        border-radius: 2em;
+        min-height: 12rem;
+    }
+
+    .stardew {
+        grid-area: stardew;
+    }
+
+    .cup {
+        grid-area: cup;
+    }
+
+    .hades {
+        grid-area: hades;
+    }
+
+    .under {
+        grid-area: tale;
+    }
+
+    .hollow {
+        grid-area: hollow;
+    }
+
+    section:hover {
+        border-radius: 0;
+        border-right: 5px solid black;
+    }
+
+    /* Animacion */
+    .animacion {
+        align-items: center;
+    }
+
+    .bueno {
+        animation-name: jujabueno;
+    }
+
+    .malo {
+        animation-name: jujamalo;
+    }
+
+    .imgjuja {
+        display: inline-block;
+        width: 150px;
+        height: auto;
+        margin-top: 75px;
+        animation-duration: 4s;
+        animation-iteration-count: 3;
+        animation-direction: alternate;
+        position: absolute;
+    }
+
+    .apedra {
+        display: inline;
+        width: 259px;
+        height: auto;
+        margin-top: 75px;
+        border-radius: .2rem;
+        border: 2px solid #ddd;
+        padding: 3px;
+        background-color: whitesmoke;
+    }
+
+    .imgExtra {
+        text-align: right;
+
+    }
+
+    @keyframes jujamalo {
+        from {
+            margin-left: 100%;
+            opacity: 0%;
+        }
+
+        to {
+            margin-left: 0%;
+            opacity: 100%;
+        }
+    }
+
+    @keyframes jujabueno {
+        from {
+            margin-left: 100%;
+            opacity: 100%;
+        }
+
+        to {
+            margin-left: 0%;
+            opacity: 0%;
+        }
+    }
 }
