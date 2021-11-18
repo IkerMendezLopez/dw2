@@ -412,6 +412,10 @@ footer {
         animation-iteration-count: 3;
         animation-direction: alternate;
         position: absolute;
+        border-radius: .2rem;
+        border: 2px solid #ddd;
+        padding: 3px;
+        background-color: whitesmoke;
     }
 
     .apedra {
