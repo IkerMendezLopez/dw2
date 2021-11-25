@@ -1,0 +1,43 @@
+.blog {
+    .post & p {
+        em {
+            color: #fff;
+        }
+    }
+}
+
+.blog {
+    .post p {
+        em & {
+            color: #fff;
+        }
+    }
+}
+
+.blog {
+    .post p {
+        :hover em {
+            color: #fff;
+        }
+    }
+}
+
+$btn-bg-color: #ce4dd6;
+
+.menu {
+    .button {
+        background-color: $btn-bg-color;
+
+        :hover {
+            background-color: lighten($btn-bg-color, 20%);
+        }
+
+        :active {
+            background-color: darken($btn-bg-color, 20%);
+        }
+
+        .disabled {
+            background-color: grayscale($btn-bg-color);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Datos Alumno</h1>
+        <form method="get" action="/Servlet1/ServletLeeDatos">
+            Nombre: <input type="text" name="nombre"><br>
+            Apellidos: <input type="text" name="apellidos"><br>
+            Edad:
+            <select name="edad">
+                <option value="menor">Menor de 18</option>
+                <option value="joven">De 18 a 30</option>
+                <option value="adulto">De 30 a 55</option>
+                <option value="mayor">Mayor de 55</option>
+            </select><br>
+            Hobbies:<br>
+            <input type="checkbox" name="hobbies" value="lectura">lectura<br>
+            <input type="checkbox" name="hobbies" value="tele">ver la tele<br>
+            <input type="checkbox" name="hobbies" value="deporte">hacer deporte<br>
+            <input type="checkbox" name="hobbies" value="emborracharse">emborracharse<br>
+            <input type="submit" name="enviar" value="Enviar">
+        </form>
+    </body>
+</html>
