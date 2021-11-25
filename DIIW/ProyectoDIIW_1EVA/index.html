@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pagina central de Indie Games">
     <meta name="author" content="Iker Méndez">
-    <link rel="icon" type="image/png" href="./img/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./img/logo.ico" sizes="32x32">
     <title>Indie Games</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="print" href="../css/print.css" />
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <nav>
             <ul>
                 <li class="paginaactual"><a href="#">Juegos</a></li>
-                <li><a href="./html/quienessomos.html">¿Quienes Somos?</a></li>
+                <li><a href="./html/quienessomos.html">¿Quiénes Somos?</a></li>
                 <li><a href="./html/contacto.html">Contactanos</a></li>
             </ul>
         </nav>
@@ -91,9 +92,44 @@
             </article>
         </section>
     </main>
+    <div class="cookies">
+        <p>Aviso de privacidad</p>
+            <p>Con su consentimiento, nosotros y nuestros socios usamos cookies o tecnologías similares para almacenar, acceder y procesar
+            datos personales como su visita en este sitio web. </p>
+            <p>Puede leer más sobre el uso de cookies en nuestra <a href="#">política de privacidad</a>.</p>
+        <br>
+        <div class="cookies-butons">
+            <a href="#" id="aceptar" class="botonlink">Aceptar</a>
+            <a href="#" id="rechazar" class="botonlink">Rechazar</a>
+        </div>
+    </div>
     <footer>
         <span> Indie Games © 2021 </span>
-        <img src="img/logo.png" alt="logo" class="logo">
+        <img src="img/logo.ico" alt="logo" class="logo">
     </footer>
+    <script>
+        const aceptar = document.querySelector('#aceptar')
+        const rechazar = document.querySelector('#rechazar')
+  
+        function guardarCookie() {
+            document.cookie = "OK";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+        function denegarCookie() {
+            document.cookie = "NO";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+
+        aceptar.addEventListener('click', guardarCookie);
+        rechazar.addEventListener('click', denegarCookie);
+        if(document.cookie=='OK'){
+            const cookies = document.querySelector('.cookies')
+            cookies.style.display = "none";
+        }
+    </script>
 </body>
 </html>
