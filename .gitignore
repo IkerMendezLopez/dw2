@@ -1,3 +1,5 @@
 *.docx
 *.pdf
 /DEWS/Projectos/nbproject/private/
+/DEWS/2eva/Servlets/01_EjerciciosIntroduccionServlets/nbproject/private/
+/DEWS/2eva/Servlets/01_EjerciciosIntroduccionServlets/build/
