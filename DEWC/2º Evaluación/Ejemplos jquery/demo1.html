@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Primer script con jQuery</title>
+<script src="jquery/jquery-1.11.3.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$("#capa").mouseenter(function(evento){
+		$("#mensaje").css("display", "block");
+	});
+	$("#capa").mouseleave(function(evento){
+		$("#mensaje").css("display", "none");
+	});
+})
+</script>
+</head>
+
+<body>
+
+<div id="capa" style="padding: 10px; background-color: #ff8800;">Pon el ratón encima de esta capa</div>
+<br>
+<div id="mensaje" style="display: none;">Has puesto el ratón encima!! <br>(Ahora quítalo de la capa)</div>
+
+</body>
+</html>

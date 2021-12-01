@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script>
+			function muestraOculto(){
+				document.getElementById("cuadrado2").style.visibility = "visible";
+			}
+			function ocultaVisible(){
+				document.getElementById("cuadrado2").style.visibility = "hidden";
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="cuadrado1" style="float:left; width:100px; height:100px; background:blue;" onmouseover="muestraOculto()" onmouseout="ocultaVisible()"></div>
+		
+		<div id="cuadrado2" style="float:left; width:100px; height:100px; background:red; visibility:hidden"></div>
+	</body>
+</html>

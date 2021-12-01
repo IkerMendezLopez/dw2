@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script>
+			window.onload=function(){
+				contador = 0;
+				variacion=100;
+
+				document.getElementById("arrancar").onclick=arrancar;
+				document.getElementById("parar").onclick=parar;
+				document.getElementById("acelerar").onclick=acelerar;
+				document.getElementById("decelerar").onclick=decelerar;
+			}
+			
+			function arrancar(){	
+				cambioBotones();	
+				desplazamiento = setInterval(mover,variacion);
+			}
+			
+			function cambioBotones(){
+				if(document.getElementById("arrancar").style.display=="none"){
+					document.getElementById("arrancar").style.display="block";
+				}
+				else{
+					document.getElementById("arrancar").style.display="none";
+				}	
+				
+				if(document.getElementById("caja").style.display=="none"){
+					document.getElementById("caja").style.display="block";
+				}
+				else{
+					document.getElementById("caja").style.display="none";
+				}
+			}
+			
+			function mover(){
+				contador += 10;
+				document.getElementById("coche").style.left = contador+"px";
+			}
+			
+			function parar() {
+				clearInterval(desplazamiento);
+				contador=10;
+			}
+			
+			function acelerar(){
+		
+				if(variacion>=10){
+					variacion-=20;
+				}
+				clearInterval(desplazamiento);
+				desplazamiento=setInterval(mover,variacion);
+			}
+			
+			function decelerar(){
+				variacion+=30;
+				clearInterval(desplazamiento);
+				desplazamiento=setInterval(mover,variacion);
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" id="arrancar" value="Arrancar"/>
+    
+		<div id="caja" style="display:none">
+			<input type="button" id="parar" value="Parar"/>
+			<input type="button" id="acelerar" value="Acelerar"/>
+			<input type="button" id="decelerar" value="Decelerar"/>
+		</div>
+		
+		<div id="coche" style="position:absolute; left:0px; top:130px;" >
+			<img src="imagenes/car.png" width="100"/>
+		</div>
+	</body>
+</html>

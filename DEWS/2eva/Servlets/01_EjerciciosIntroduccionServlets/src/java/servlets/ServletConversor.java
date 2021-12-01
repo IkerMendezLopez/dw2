@@ -28,9 +28,7 @@ public class ServletConversor extends HttpServlet {
             try (PrintWriter out = response.getWriter()) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Conversion</title>");
-                out.println("</head>");
+                out.println("<head><title>Conversion</title></head>");
                 out.println("<body>");
                 out.println("<h1>Resultado</h1>");
                 String opcion = "";
@@ -39,7 +37,7 @@ public class ServletConversor extends HttpServlet {
                 } else {
                     opcion = "fah";
                 }
-                dibujarResultado(out, request, opcion); //Ha seleccionado el submitCel-Fah
+                dibujarResultado(out, request, opcion);
                 out.println("</body>");
                 out.println("</html>");
             }
@@ -49,25 +47,28 @@ public class ServletConversor extends HttpServlet {
 
     private void dibujarResultado(PrintWriter out, HttpServletRequest request, String opc) {
         try {
-            String txt="";
+            String txt = "";
             double conversion;
-            String tipo="";
-            if(opc=="cel"){
+            String tipo = "";
+            String otro = "";
+            if (opc == "cel") {
                 txt = request.getParameter("celTxt");
                 conversion = Double.parseDouble(txt) * 9 / 5 + 32;
-                tipo ="Celsius";
-            }else{
+                tipo = "Celsius";
+                otro = "Fahrenheit";
+            } else {
                 txt = request.getParameter("fahTxt");
-                conversion = (Double.parseDouble(txt)-32) * 5/9;
-                tipo ="Fahrenheit";
+                conversion = (Double.parseDouble(txt) - 32) * 5 / 9;
+                tipo = "Fahrenheit";
+                otro = "Celsius";
             }
             out.print("<h3>Resultado de la conversion: </h3>");
-            out.print("<p><strong>Valor en Celsius: </strong>" + txt + "</p>");
-            out.print("<p><strong>Valor en Fahrenheit: </strong>" + conversion + "</p>");
+            out.print("<p><strong>Valor en " + tipo + ": </strong>" + txt + "</p>");
+            out.print("<p><strong>Valor en " + otro + ": </strong>" + conversion + "</p>");
         } catch (NumberFormatException e) {
-            out.print("<p><strong>*ERROR, debes indicar los grados! (Introduzca un valor numerico)</strong></p>");
+            out.print("<p style='color:red'><strong>Se ha producido un error, vuelva a introducir los datos</strong></p>");
         }
 
-        out.print("<p><a href='conversorCF.html'>Enlace para volver al formulario</a></p>");
+        out.print("<p><a href='conversorCF.html'>Volver al formulario</a></p>");
     }
 }

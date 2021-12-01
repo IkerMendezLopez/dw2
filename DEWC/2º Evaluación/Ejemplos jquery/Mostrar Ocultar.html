@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Mostrar Ocultar</title>
+<script src="jquery-1.11.3.js" type="text/javascript"></script>	
+<script>
+$(document).ready(function(){
+	$("#mayoria_edad").click(function(evento){
+		if ($("#mayoria_edad").attr("checked")){
+			$("#formulariomayores").css("display", "inline");
+		}else{
+			$("#formulariomayores").css("display", "none");
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+
+<form>
+Nombre: <input type="text" name="nombre">
+<br>
+<input type="checkbox" name="mayor_edad" value="1" id="mayoria_edad"> Soy mayor de edad
+<br>
+<div id="formulariomayores" style="display:none;">
+Cuadro para mayores: <input type="text" name="mayores_edad">
+</div>
+</form>
+
+
+
+
+</body></html>

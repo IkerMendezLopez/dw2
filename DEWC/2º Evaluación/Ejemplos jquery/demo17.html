@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>propiedad length del core jQuery</title>
+	<script src="jquery-1.11.3.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	//selecciono todos los elementos de la clase "mitexto"
+	var ElementosMitexto = $(".mitexto");
+	//muestro el número de los párrafos encontrados
+	alert ("Hay " + ElementosMitexto.length + " elementos de la clase mitexto");
+});
+</script>
+</head>
+
+<body>
+
+<p>Esto es un párrafo normal</p>
+<p class="mitexto">Esto es un párrado de la clase "mitexto"</p>
+<div>Un div normal</div>
+<div class="mitexto">Ahora un div de la clase "mitexto"</div>
+</body>
+</html>

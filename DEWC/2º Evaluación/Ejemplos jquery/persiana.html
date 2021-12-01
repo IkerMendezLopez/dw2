@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			#capa{
+				width:200px; 
+				height:200px;
+				position:absolute; 
+				top: 250px; 
+				left: 250px;
+				background-color: #CCC;
+				margin-left: 100px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				cont = 0;
+				capa = setInterval(mostrar,100);
+			}
+			
+			function mostrar(){
+				cont+= 3;
+				if (cont <= 200) {
+					document.getElementById("capa").style="display:block";
+					document.getElementById("capa").style.clip="rect(0px, 200px, "+cont+"px, 0px)";
+				} 
+				else{
+					clearInterval(capa);
+				}
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="capa">
+			<p>1. Mi</br>
+        	2. capa</br>
+            3. que</br>
+        	4. va</br>
+            5. apareciendo</br>
+        	6. poco</br>
+			7. a</br>
+        	8. poco</p>
+		</div>
+	</body>
+</html>
