@@ -1,0 +1,100 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "aside" "footer";
+}
+body header {
+  grid-area: header;
+}
+body aside {
+  grid-area: aside;
+}
+body main {
+  grid-area: main;
+}
+body footer {
+  grid-area: footer;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main,
+aside {
+  padding: 0.5rem;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style: none;
+  gap: 1rem;
+  background-color: #808080;
+  padding: 1rem;
+}
+header nav ul li a {
+  color: #FFF;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+header nav ul li a:hover {
+  background-color: black;
+  border-radius: 1rem;
+  border-end-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  padding: 1rem;
+  background-color: #808080;
+  text-align: center;
+  color: #FFF;
+  font-style: italic;
+  border-radius: 1rem;
+  border-end-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+article {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+article .article-info {
+  display: flex;
+  justify-content: flex-end;
+  font-style: italic;
+}
+article p {
+  text-align: justify;
+}
+article p img {
+  width: 100px;
+  float: right;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  background-color: #CCCCCC;
+  border: 1px solid #808080;
+}
+
+footer {
+  background-color: #222222;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

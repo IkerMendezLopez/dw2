@@ -1,0 +1,18 @@
+// BODY LAYOUT
+
+// mobile
+
+body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"header"
+	"main"
+	"aside"
+	"footer";
+
+	header {grid-area: header}
+	aside {grid-area: aside}
+	main {grid-area: main}
+	footer {grid-area: footer}
+}
