@@ -1,0 +1,9 @@
+@mixin letra ($pantalla) {
+    @if $pantalla=="p" {
+        color: $color1;
+    }
+
+    @else if $pantalla=="m" {
+        color: $color2;
+    }
+}

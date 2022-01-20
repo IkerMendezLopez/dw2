@@ -1,0 +1,24 @@
+.aside {
+	&_izquierda {
+		h2 {
+			display:none;
+		}
+		border:1px solid $color1;
+		border-radius: 10px;
+		margin: 0.5rem;
+		padding: 0.5rem;
+		width:98%;
+	}
+
+	&_derecha {
+		h2 {
+			display:none;
+		}
+		border:1px solid $color1;
+		border-radius: 10px;
+		margin: 0.5rem;
+		padding: 0.5rem;
+		width:98%;
+        position:relative;
+	}
+}

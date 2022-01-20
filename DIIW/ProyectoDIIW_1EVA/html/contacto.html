@@ -30,14 +30,21 @@
             <form>
                 <div class="columnas">
                     <div>
-                        <input type="text" class="dato" name="apellido1" placeholder="Nombre*"><br>
+                        <label for="nombre" hidden>Nombre</label>
+                        <input type="text" class="dato" name="nombre" placeholder="Nombre*"><br>
+                        <label for="apellido1" hidden>Primer Apellido</label>
                         <input type="text" class="dato" name="apellido1" placeholder="Primer Apellido*"><br>
+                        <label for="apellido2" hidden>Segundo Apellido</label>
                         <input type="text" class="dato" name="apellido2" placeholder="Segundo Apellido*"><br>
+                        <label for="email" hidden>E-Mail</label>
                         <input type="email" class="dato" name="email" placeholder="E-Mail*"><br>
+                        <label for="telefono" hidden>Telefono</label>
                         <input type="number" class="dato" name="telefono" placeholder="Telefono"><br>
                     </div>
                     <div>
+                        <label for="pais" hidden>Pais</label>
                         <input type="text" class="dato" name="pais" placeholder="Pais*"><br>
+                        <label for="observaciones" hidden>Observaciones</label>
                         <textarea maxlength="300" id="textArea" placeholder="Observaciones"></textarea><br>
                     </div>
                 </div>
