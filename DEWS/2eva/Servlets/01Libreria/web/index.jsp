@@ -41,6 +41,7 @@
             <input type="submit" name="insertar" value="INSERTAR LIBRO">
             </select>
         </form>
+            <a href="devoluciones">Ir a devoluciones</a>
         <p>${errorinsercion}</p>
     </body>
 </html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indie Games es una pagína para dar apoyo a juegos indie">
+    <meta name="author" content="Iker Méndez">
+    <link rel="icon" type="image/png" href="./img/logo.ico" sizes="32x32">
+    <title>Indie Games</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="print" href="../css/print.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="paginaactual"><a href="#contenidoPrincipal">Juegos</a></li>
+                <li><a href="./html/quienessomos.html">¿Quiénes Somos?</a></li>
+                <li><a href="./html/contacto.html">Contactanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="grande" id="contenidoPrincipal">
+        <!-- STARDEW VALLEY -->
+        <h1 hidden>Título</h1>
+        <section class="juego stardew">
+            <h2>Stardew Valley</h2>
+            <article class="sinopsis">
+                <p><b>Sinopsis: </b>Heredaste la vieja granja de tu abuelo en Stardew Valley. Armado con herramientas de
+                    mano y unas
+                    monedas, te diriges al principio de tu nueva vida. Podrás aprender a vivir de la tierra y convertir
+                    esas
+                    tierras salvajes en tu hogar? No será fácil. Desde que la Corporación Joja llegó al pueblo, las
+                    viejas
+                    costumbres de vida empezaron a desaparecer. El centro comunal, uno de los lugares con más actividad
+                    del pueblo, está abandonado. Pero el valle está lleno de oportunidades. Con un poco de dedicación, tú
+                    podrías ser quien recupere la grandeza de Stardew Valley.</p>
+                <p><a href="./html/stardewValley.html">Leer más</a></p>
+            </article>
+        </section>
+        <!-- CUP HEAD -->
+        <section class="juego cup">
+            <h2>Cup Head</h2>
+            <article class="sinopsis">
+                <p><b>Sinopsis: </b>Cuphead es un juego de acción clásico estilo «dispara y corre»
+                    que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los
+                    aspectos
+                    visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir,
+                    animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz.</p>
+                <p><a href="./html/cupHead.html">Leer más</a></p>
+            </article>
+        </section>
+        <!-- HADES -->
+        <section class="juego hades">
+            <h2>Hades</h2>
+            <article class="sinopsis">
+                <p><b>Sinopsis: </b>Desafía al dios de la muerte mientras te abres paso al mejor
+                    estilo hack and slash para escapar del Inframundo en este juego de exploración de mazmorras de los
+                    creadores de Bastion y Transistor.</p>
+                <p><a href="./html/hades.html">Leer más</a></p>
+            </article>
+        </section>
+        <!-- UNDERTALE -->
+        <section class="juego under">
+            <h2>Undertale</h2>
+            <article class="sinopsis">
+                <p><b>Sinopsis: </b>Hace muchos años, dos razas reinaban a la par sobre la superficie:
+                    los humanos y los monstruos. Un día estalló una guerra entre ambos, que se saldó con la victoria
+                    aplastante de los humanos. Los monstruos fueron expulsados de la superficie y exiliados al subsuelo,
+                    siendo encerrados por una barrera mágica impuesta por los humanos. Años más tarde, surgen leyendas
+                    que
+                    cuentan que todo aquel que sube al monte Ebott jamás vuelve. La historia de Undertale comienza
+                    cuando
+                    el/la personaje protagonista, Frisk, tras escalar el Monte Ebott, el lugar donde 6 humanos habían
+                    desaparecido, cae por un abismo y se despierta en las Ruinas, dentro del subsuelo.</p>
+                <p><a href="./html/undertale.html">Leer más</a></p>
+            </article>
+        </section>
+        <section class="juego hollow">
+            <h2>Hollow Knight</h2>
+            <article class="sinopsis">
+                <p><b>Sinopsis: </b>Desciende al mundo de Hollow Knight! La galardonada aventura de
+                    acción de insectos y héroes. Explora cavernas serpenteantes, antiguas ciudades y páramos mortales.
+                    Lucha
+                    contra criaturas mancilladas y haz nuevas amistades con extraños insectos. Descubre una antigua
+                    historia
+                    y resuelve los misterios de este reino.</p>
+                <p><a href="./html/hollowKnight.html">Leer más</a></p>
+            </article>
+        </section>
+    </main>
+    <div class="cookies">
+        <p>Aviso de privacidad</p>
+            <p>Con su consentimiento, nosotros y nuestros socios usamos cookies o tecnologías similares para almacenar, acceder y procesar
+            datos personales como su visita en este sitio web. </p>
+            <p>Puede leer más sobre el uso de cookies en nuestra <a href="#">política de privacidad</a>.</p>
+        <br>
+        <div class="cookies-butons">
+            <a href="index.html" id="aceptar" class="botonlink">Aceptar</a>
+            <a href="index.html" id="rechazar" class="botonlink">Rechazar</a>
+        </div>
+    </div>
+    <footer>
+        <span> Indie Games © 2021 </span>
+        <img src="img/logo.ico" alt="logo indie games" class="logo">
+    </footer>
+    <script>
+        const aceptar = document.querySelector('#aceptar')
+        const rechazar = document.querySelector('#rechazar')
+  
+        function guardarCookie() {
+            document.cookie = "OK";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+        function denegarCookie() {
+            document.cookie = "NO";
+            const cookies = document.querySelector('.cookies')
+            event.preventDefault();
+            cookies.style.display = "none";
+        }
+
+        aceptar.addEventListener('click', guardarCookie);
+        rechazar.addEventListener('click', denegarCookie);
+        if(document.cookie=='OK'){
+            const cookies = document.querySelector('.cookies')
+            cookies.style.display = "none";
+        }
+    </script>
+</body>
+</html>

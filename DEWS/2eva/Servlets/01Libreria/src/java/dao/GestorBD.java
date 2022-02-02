@@ -6,12 +6,17 @@
 package dao;
 
 import beans.Libro;
+import beans.Prestamo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,6 +64,25 @@ public class GestorBD {
             System.err.println("Error en metodo libros: " + ex);
         }
         return libros;
+    }
+    public ArrayList<Prestamo> prestamos(){
+        ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
+        String sql = "SELECT * FROM prestamo";
+        try {
+            Connection con = dataSource.getConnection();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                Prestamo prestamo = new Prestamo(rs.getInt("id"), rs.getDate("fecha"),rs.getInt("idlibro"));
+                prestamos.add(prestamo);
+            }
+            rs.close();
+            st.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.err.println("Error en metodo libros: " + ex);
+        }
+        return prestamos;
     }
     
     public LinkedHashMap<Integer, String> autores(){
@@ -130,4 +154,58 @@ public class GestorBD {
         
         return id;
     }
+    
+    public Libro dameLibro(int id){
+        ArrayList<Libro> libros = libros();
+        for(Libro l:libros){
+            if(l.equals(new Libro(id))){
+                return l;
+            }
+        }
+        return null;
+    }
+    public Prestamo damePrestamo(int id){
+        ArrayList<Prestamo> prestamos = prestamos();
+        for(Prestamo p: prestamos){
+            if(p.equals(new Prestamo(id))){
+                return p;
+            }
+        }
+        return null;
+    }
+    public LinkedHashMap<Prestamo, Libro> librosPrestados(){
+        LinkedHashMap<Prestamo, Libro> libros = new LinkedHashMap<Prestamo, Libro>();
+        String sql = "SELECT * FROM prestamo order by fecha";
+         try {
+            Connection con = dataSource.getConnection();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                libros.put(damePrestamo(rs.getInt("id")),dameLibro(rs.getInt("idlibro")));
+                
+            }
+            rs.close();
+            st.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.err.println("Error en metodo libros: " + ex);
+        }
+        return libros;
+    }
+    
+    public boolean devolverLibro(int id){
+        String sql = "delete from prestamo where id=" +id;
+        int n=0;
+        try {
+            Connection con = dataSource.getConnection();
+            Statement st = con.createStatement();
+            n = st.executeUpdate(sql); 
+            st.close();
+            con.close();
+        } catch (SQLException ex) {
+            System.err.println("Error en metodo libros: " + ex);
+        }
+        return n>0;
+    }
+    
 }

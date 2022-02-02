@@ -245,7 +245,7 @@ textarea {
 
 /* Boton Link */
 .botonlink {
-    background-color: #6a6a6a;
+    background-color: black;
     padding: .5rem 1rem;
     text-decoration: unset;
     border-radius: .2rem;

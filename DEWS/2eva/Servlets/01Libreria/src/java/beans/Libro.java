@@ -31,6 +31,10 @@ public class Libro {
         this.idAutor = idAutor;
     }
 
+    public Libro(int idLibro) {
+        this.idLibro = idLibro;
+    }
+
     public Libro() {
     }
 
@@ -73,5 +77,33 @@ public class Libro {
     public void setIdAutor(int idAutor) {
         this.idAutor = idAutor;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    //Modificamos el equals para que el libro se identifique mediante id
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Libro other = (Libro) obj;
+        if (this.idLibro != other.idLibro) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
     
 }

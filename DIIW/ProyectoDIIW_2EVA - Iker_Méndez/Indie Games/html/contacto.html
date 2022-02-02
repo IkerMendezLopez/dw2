@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con nosotros">
+    <meta name="author" content="Iker Méndez">
+    <link rel="icon" type="image/png" href="../img/logo.ico" sizes="32x32">
+    <title>Indie Games - Contacto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" media="print" href="../css/print.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Juegos</a></li>
+                <li><a href="./quienessomos.html">¿Quiénes Somos?</a></li>
+                <li class="paginaactual"><a href="contacto.html">Contactanos</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+        <h1 role="banner" class="title">Contacto</h1>
+        <div class="contenedor formulario">
+            <form role="form">
+                <div class="columnas">
+                    <div>
+                        <label for="nombre" hidden>Nombre</label>
+                        <input type="text" class="dato" name="nombre" id="nombre" placeholder="Nombre*" aria-required="true"><br>
+                        <label for="apellido1" hidden>Primer Apellido</label>
+                        <input type="text" class="dato" name="apellido1" id="apellido1" placeholder="Primer Apellido*" aria-required="true"><br>
+                        <label for="apellido2" hidden>Segundo Apellido</label>
+                        <input type="text" class="dato" name="apellido2" id="apellido2" placeholder="Segundo Apellido*" aria-required="true"><br>
+                        <label for="email" hidden>E-Mail</label>
+                        <input type="email" class="dato" name="email" id="email" placeholder="E-Mail*" aria-required="true"><br>
+                        <label for="telefono" hidden>Telefono</label>
+                        <input type="number" class="dato" name="telefono" id="telefono" placeholder="Telefono"><br>
+                    </div>
+                    <div>
+                        <label for="pais" hidden>Pais</label>
+                        <input type="text" class="dato" name="pais" id="pais" placeholder="Pais*" aria-required="true"><br>
+                        <label for="observaciones" hidden>Observaciones</label>
+                        <textarea maxlength="300" id="observaciones" placeholder="Observaciones"></textarea><br>
+                    </div>
+                </div>
+                <div>
+                    <input type="button" class="boton" value="Enviar">
+                    <input type="reset" class="boton" value="Limpiar">
+                </div>
+            </form>
+            <div>
+                <img src="../img/sobre.webp" alt="sobre" class="sobre">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span> Indie Games © 2021 </span>
+        <img src="../img/logo.ico" alt="logo_indie_games" class="logo">
+    </footer>
+</body>
+</html>
