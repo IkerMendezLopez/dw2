@@ -26,10 +26,10 @@
                 if(request.getParameter("actividad")!=null && actividad.getId() == Integer.parseInt(request.getParameter("actividad"))){
                     estilo = "background-color: greenyellow";
                 }
-                out.print("<tr style='"+estilo+"'>"
-                            + "<td>"+actividad.getNombre()+"</td>"
+                out.print("<tr style='"+estilo+"'>"+ "<td>"+actividad.getNombre()+"</td>"
                             + "<td><a href='ServletAvisos?actividad="+actividad.getId()+"'>ASISTENCIA</a></td>"
                         + "</tr>");
+                
             }
             out.print("</table>");
             
