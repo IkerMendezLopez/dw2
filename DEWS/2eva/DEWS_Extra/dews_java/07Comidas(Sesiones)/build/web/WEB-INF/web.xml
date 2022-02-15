@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>ficherocomidas</param-name>
+        <param-value>comidas.obj</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ServletForm</servlet-name>
+        <servlet-class>servlets.ServletForm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletGrabar</servlet-name>
+        <servlet-class>servlets.ServletGrabar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletPedido</servlet-name>
+        <servlet-class>servlets.ServletPedido</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletForm</servlet-name>
+        <url-pattern>/ServletForm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletGrabar</servlet-name>
+        <url-pattern>/ServletGrabar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletPedido</servlet-name>
+        <url-pattern>/ServletPedido</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

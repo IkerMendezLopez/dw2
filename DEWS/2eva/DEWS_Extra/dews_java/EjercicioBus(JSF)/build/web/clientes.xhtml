@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Clientes</title>
+    </h:head>
+    <h:body>
+        
+        <h2>ALSA 🚌🚍</h2>
+        
+        
+        
+        <hr/>
+        
+        
+        
+        <h4>Clientes</h4>
+        <h:dataTable value="#{mBclientes.lstClientes}" var="cliente">
+            
+            <h:column>
+                <f:facet name="header">DNI</f:facet>
+                <h:outputLabel value="#{cliente.dni}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">NOMBRE</f:facet>
+                <h:outputLabel value="#{cliente.nombre}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">DIRECCION</f:facet>
+                <h:outputLabel value="#{cliente.direccion}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">EMAIL</f:facet>
+                <h:outputLabel value="#{cliente.email}"/>
+            </h:column>
+        </h:dataTable>
+        
+        
+        
+        <hr/>
+        
+        
+        
+        <h4>Registrate</h4>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="DNI"/>
+                <h:inputText value="#{mBclientes.cliente.dni}" id="dni">
+                    <f:validator validatorId="validadorDNI"/>
+                </h:inputText>
+                <h:message for="dni"/>
+                
+                
+                <h:outputLabel value="NOMBRE"/>
+                <h:inputText value="#{mBclientes.cliente.nombre}" id="nombre"> 
+                    <f:validator validatorId="validadorNombre"/>
+                    <f:converter converterId="conversorNombre"/>
+                </h:inputText>
+                <h:message for="nombre"/>
+                
+                
+                <h:outputLabel value="DIRECCION"/>
+                <h:inputText value="#{mBclientes.cliente.direccion}" id="direccion"> <!-- required="true"-->
+                    <f:validator validatorId="validadorDireccion"/>
+                </h:inputText>
+                <h:message for="direccion"/>
+                
+                
+                <h:outputLabel value="EMAIL"/>
+                <h:inputText value="#{mBclientes.cliente.email}" id="email">
+                    <f:validator validatorId="validadorEmail"/>
+                </h:inputText>
+                <h:message for="email"/>
+            </h:panelGrid><br/>
+            
+            <h:commandButton value="REGISTRAR" action="#{mBclientes.registrar()}"/>
+            <h:outputLabel value="#{mBclientes.estadoInserccion}" rendered="#{mBclientes.estadoInserccion!=null}"/>
+        </h:form>
+        
+        
+        
+        
+        
+    </h:body>
+</html>
+

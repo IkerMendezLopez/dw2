@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="NOMBRE"/>
+                <h:inputText value="#{mBregistro.persona.nombre}" id="nombre" required="true" requiredMessage="*Nombre obligatorio!" validator="#{mBregistro.validaNombre}"/>
+                <h:message for="nombre"/>                    
+                
+                <h:outputLabel value="EDAD"/>
+                <h:inputText value="#{mBregistro.persona.edad}" id="edad" required="true">
+                    <f:validateLongRange minimum="18" maximum="100"/>
+                </h:inputText>
+                <h:message for="edad"/>                    
+                
+                <h:outputLabel value="FECHA NACIMIENTO"/>
+                <h:inputText value="#{mBregistro.persona.fechaNac}" id="fecha">
+                    <f:convertDateTime pattern="dd-MM-yyyy"/>
+                </h:inputText>
+                <h:message for="fecha"/> 
+                
+                <h:outputLabel value="CONTRASEÑA"/>
+                <h:inputSecret value="#{mBregistro.pass}" id="pass">
+                    <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,100})"/>
+                </h:inputSecret>
+                <h:message for="pass"/>                    
+                
+                <h:outputLabel value="CODIGO REGISTRO"/>
+                <h:inputText id="codigo">
+                    <f:validator validatorId="validadorCodigo"/>
+                </h:inputText>
+                <h:message for="codigo"/>
+                
+                <h:outputLabel value="CICLO"/>
+                <h:selectOneListbox value="#{mBregistro.ciclo}">
+                    <f:selectItems value="#{mBregistro.todosCiclos()}" var="ciclo" itemLabel="#{ciclo.nombre}" itemValue="#{ciclo}"/>
+                    <f:converter converterId="conversorCiclo"/>
+                </h:selectOneListbox>
+                
+            </h:panelGrid> 
+            
+            <h:commandButton value="ENVIAR" action="registrado"/>
+        </h:form>
+        
+    </h:body>
+</html>
+

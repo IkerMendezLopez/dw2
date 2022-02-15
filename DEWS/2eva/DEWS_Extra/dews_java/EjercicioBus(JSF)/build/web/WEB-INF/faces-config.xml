@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>mBrutas</managed-bean-name>
+        <managed-bean-class>mbeans.MBrutas</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>mBcompraBilletes</managed-bean-name>
+        <managed-bean-class>mbeans.MBcompraBilletes</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>mBclientes</managed-bean-name>
+        <managed-bean-class>mbeans.MBclientes</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <validator>
+        <validator-class>validators.ValidadorDNI</validator-class>
+        <validator-id>validadorDNI</validator-id>
+    </validator>
+    <validator>
+        <validator-class>validators.ValidadorDireccion</validator-class>
+        <validator-id>validadorDireccion</validator-id>
+    </validator>
+    <validator>
+        <validator-class>validators.ValidadorNombre</validator-class>
+        <validator-id>validadorNombre</validator-id>
+    </validator>
+    <validator>
+        <validator-class>validators.ValidadorEmail</validator-class>
+        <validator-id>validadorEmail</validator-id>
+    </validator>
+    <converter>
+        <converter-class>converters.ConversorNombre</converter-class>
+        <converter-id>conversorNombre</converter-id>
+    </converter>
+</faces-config>
